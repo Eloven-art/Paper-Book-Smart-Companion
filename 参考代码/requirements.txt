@@ -1,0 +1,12 @@
+flask==3.0.0
+flask-cors==4.0.0
+requests==2.31.0
+pydantic==2.5.0
+tqdm==4.66.1
+numpy
+pillow
+opencv-python
+websockets
+sseclient-py
+# 可选：OSS 上传功能（generate_video.py）
+oss2
