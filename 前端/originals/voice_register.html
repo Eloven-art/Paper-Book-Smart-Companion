@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS 音色注册</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        textarea,
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .audio-section {
+            border: 2px dashed #3498db;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #ebf5fb;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-record {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-record.recording {
+            background-color: #c0392b;
+            animation: pulse 1.5s infinite;
+        }
+
+        .btn-submit {
+            background-color: #2ecc71;
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .btn-submit:disabled {
+            background-color: #bdc3c7;
+        }
+
+        #audioPlayback {
+            margin-top: 15px;
+            width: 100%;
+            display: none;
+        }
+
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>TTS 音色注册</h1>
+
+        <div class="form-group">
+            <label for="spkname">音色名称 (Speaker Name):</label>
+            <input type="text" id="spkname" placeholder="例如: judy" value="judy">
+        </div>
+
+        <div class="form-group">
+            <label for="prompt_text">提示文本 (Prompt Text)（请输入规范文本，只支持中文/英文/逗号和句号）:</label>
+            <textarea id="prompt_text" rows="3"
+                placeholder="请输入音频对应的文字内容...">她随手写下好累，字迹竟缓缓消失，书页浮现一行红字，说出你的愿望。</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>音色音频 (录音或上传):</label>
+            <div class="audio-section">
+                <input type="file" id="audioFile" accept="audio/*" style="display: none;">
+                <div class="btn-group">
+                    <button type="button" class="btn-record" id="recordBtn">开始录音</button>
+                    <button type="button" style="background-color: #3498db; color: white;"
+                        onclick="document.getElementById('audioFile').click()">上传文件</button>
+                </div>
+                <audio id="audioPlayback" controls></audio>
+                <p id="fileInfo" style="margin-top: 10px; font-size: 14px; color: #666;"></p>
+            </div>
+        </div>
+
+        <button class="btn-submit" id="submitBtn">提交注册</button>
+
+        <div id="status"></div>
+    </div>
+
+    <!-- 引入前端录音库，直接生成 WAV 格式 -->
+    <script src="https://unpkg.com/recorder-core/recorder.mp3.min.js"></script>
+    <script src="https://unpkg.com/recorder-core/src/engine/wav.js"></script>
+
+    <script>
+        let rec;
+        let audioBlob;
+        const recordBtn = document.getElementById('recordBtn');
+        const audioPlayback = document.getElementById('audioPlayback');
+        const audioFileInput = document.getElementById('audioFile');
+        const fileInfo = document.getElementById('fileInfo');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // 初始化录音机
+        function recOpen() {
+            rec = Recorder({
+                type: "wav",
+                sampleRate: 16000,
+                bitRate: 16,
+                onProcess: function (buffers, powerLevel, bufferSampleRate, resume) { }
+            });
+            rec.open(() => {
+                console.log("录音机已打开");
+            }, (msg, isUserNotAllow) => {
+                alert((isUserNotAllow ? "用户拒绝了权限，" : "") + "无法打开录音机：" + msg);
+            });
+        }
+
+        // 页面加载后尝试打开录音机
+        recOpen();
+
+        // 录音按钮点击逻辑
+        recordBtn.onclick = () => {
+            if (!rec) {
+                recOpen();
+                return;
+            }
+
+            if (recordBtn.textContent === "开始录音") {
+                rec.start();
+                recordBtn.textContent = "停止录音";
+                recordBtn.classList.add('recording');
+            } else {
+                rec.stop((blob, duration) => {
+                    audioBlob = blob;
+                    const audioUrl = URL.createObjectURL(blob);
+                    audioPlayback.src = audioUrl;
+                    audioPlayback.style.display = 'block';
+                    fileInfo.textContent = "录音已就绪 (WAV格式)";
+                    recordBtn.textContent = "开始录音";
+                    recordBtn.classList.remove('recording');
+                }, (msg) => {
+                    alert("录音失败：" + msg);
+                });
+            }
+        };
+
+        // 文件上传逻辑
+        audioFileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                audioBlob = file;
+                const audioUrl = URL.createObjectURL(file);
+                audioPlayback.src = audioUrl;
+                audioPlayback.style.display = 'block';
+                fileInfo.textContent = `已选择文件: ${file.name}`;
+            }
+        };
+
+        // 提交逻辑
+        submitBtn.onclick = async () => {
+            if (!audioBlob) {
+                alert("请先录音或上传音频文件！");
+                return;
+            }
+
+            const formData = new FormData();
+            // 确保发送的文件名以 .wav 结尾
+            formData.append('audio', audioBlob, "recording.wav");
+            formData.append('text', document.getElementById('prompt_text').value);
+            formData.append('spkname', document.getElementById('spkname').value);
+
+            const statusDiv = document.getElementById('status');
+            statusDiv.style.display = 'block';
+            statusDiv.className = '';
+            statusDiv.textContent = '正在提交，请稍候...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/tts-story-book/api/enroll', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusDiv.className = 'success';
+                    statusDiv.innerHTML = `<strong>注册成功!</strong><br>MOS: ${result.mos}<br>WER: ${result.wer}<br>5秒后自动返回主页...`;
+                    setTimeout(() => {
+                        window.location.href = 'tts_v2.html';
+                    }, 5000);
+                } else {
+                    statusDiv.className = 'error';
+                    statusDiv.textContent = '注册失败: ' + (result.message || '未知错误');
+                }
+            } catch (error) {
+                statusDiv.className = 'error';
+                statusDiv.textContent = '请求异常: ' + error.message;
+            } finally {
+                submitBtn.disabled = false;
+            }
+        };
+    </script>
+
+</body>
+
+</html>

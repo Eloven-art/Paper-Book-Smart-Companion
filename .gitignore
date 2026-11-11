@@ -27,3 +27,5 @@ logs/cost_ledger.jsonl
 .pytest_cache/
 *.part
 .tmp_audio_*
+# 前端音色模块运行时数据（含参考声音录音，属于个人语音数据，不入库）
+前端/work/
