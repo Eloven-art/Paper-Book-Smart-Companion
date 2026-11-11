@@ -14,3 +14,16 @@ logs/*.log
 Thumbs.db
 desktop.ini
 ~$*
+
+# 运行时数据（可能含受限的官方绘本，不入库）；data/samples/ 是自制示例，入库
+data/books/
+data/uploads/
+data/reference_runtime/
+# 运行记录、任务状态、费用台账（可能含绘本内容）；logs/examples/ 是自制示例上的记录，入库
+logs/runs/
+logs/tasks/
+logs/cost_ledger.jsonl
+# 测试与临时文件
+.pytest_cache/
+*.part
+.tmp_audio_*
