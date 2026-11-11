@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-“人工智能+”竞赛项目：纸质图书多模态智能升级与智能伴读。分工、里程碑与数据约定见 `纸书智伴_五人分工说明_v2.txt`；参考实现见 `参考代码/`（Flask 后端 `story_tts_server.py` + 前端 `tts_v2.html`）。
+“人工智能+”竞赛项目：纸质图书多模态智能升级与智能伴读。分工、里程碑与数据约定见 `纸书智伴_五人分工说明_v2.txt`；参考实现见 `参考代码/`（Flask 后端 `story_tts_server.py` + 前端 `tts_v2.html`）。参考代码只读不改，新后端在 `server/` 和 `agents/`。
 
 ## Git 约定
 
@@ -18,4 +18,6 @@
 
 - 密钥只放环境变量，不写入代码、文档或仓库。
 - 官方受限数据不入公开仓库；官方绘本到手前只使用 AI 生成或自绘的模拟绘本。
-- 目录规划：`configs/ agents/ web/ eval/ logs/ docs/ data/`。
+- 目录规划：`configs/ agents/ server/ web/ eval/ scripts/ tests/ logs/ docs/ data/`。其中 `server/`（后端服务）、`scripts/`（命令行脚本）、`tests/`（自动化测试）是后端开发时新增的。
+- 后端：`python -m server` 启动；改动后运行 `python -m pytest`；接口字段以 `docs/接口约定_v0.1.md` 为准。
+- 提示词放在 `configs/prompts/`，文件名即版本号；修改时另存为新版本，不直接改旧文件。

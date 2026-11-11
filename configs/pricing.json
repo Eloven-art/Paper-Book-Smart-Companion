@@ -1,0 +1,20 @@
+{
+  "_说明": "单价和预算。单价请按服务商的正式价目表填写；保持 null 表示未知，台账只记用量、金额记为 null。预算为 null 表示不限制。",
+  "currency": "CNY",
+  "services": {
+    "i2v": {
+      "*": {"per_second": null, "per_call": null}
+    },
+    "llm": {
+      "*": {"per_1k_input_tokens": null, "per_1k_output_tokens": null}
+    },
+    "tts": {
+      "*": {"per_1k_chars": null}
+    }
+  },
+  "budgets": {
+    "i2v": {"max_calls_per_day": 30, "max_amount_total": null},
+    "llm": {"max_calls_per_day": 500, "max_amount_total": null},
+    "tts": {"max_calls_per_day": 500, "max_amount_total": null}
+  }
+}
