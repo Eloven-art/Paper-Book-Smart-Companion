@@ -2,7 +2,8 @@
 """真实接口：路径前缀 /api/v1。字段与假接口（/mock/api/v1）一致。
 
 已接入真实实现：绘本上传与读取、旁白生成、视频生成、任务状态、运行记录与费用查询。
-尚未接入（返回 501 NOT_IMPLEMENTED，可先用假接口）：语音识别、语音合成、问答、触控识别、对话历史
+已接入：点击识物（查表主方案，物体框来自分页数据）。
+尚未接入（返回 501 NOT_IMPLEMENTED，可先用假接口）：语音识别、语音合成、问答、对话历史
 ——它们依赖 B 的检索与识别模块和 A 后续的语音链路（步骤 6 以后）。
 """
 from __future__ import annotations
@@ -12,6 +13,7 @@ from typing import Optional
 
 from flask import Blueprint, current_app, request, send_file
 
+from . import touch
 from .book_store import BookStore, check_book_id, check_page_no, empty_page, summarize_book, with_urls
 from .envelope import begin_request, ok
 from .errors import NotFoundError, NotImplementedYet, ValidationError
@@ -256,7 +258,24 @@ def qa_ask():
 
 @bp.post("/touch/identify")
 def touch_identify():
-    _pending("触控识别", "/mock/api/v1/touch/identify")
+    """点击识物（查表主方案）。物体框来自分页数据；页面还没有标注时 hit=false 并说明原因。"""
+    body = _body()
+    book_id = check_book_id(body.get("book_id"))
+    page_no = check_page_no(body.get("page_no"))
+    try:
+        x, y = float(body["x"]), float(body["y"])
+    except (KeyError, TypeError, ValueError):
+        raise ValidationError("缺少点击坐标 x、y", details={"field": "x,y"}) from None
+    play_time = body.get("play_time")
+    try:
+        play_time = float(play_time) if play_time not in (None, "") else None
+    except (TypeError, ValueError):
+        raise ValidationError("play_time 应为数字", details={"field": "play_time"}) from None
+    book = _store().load(book_id)
+    page = BookStore.get_page(book, page_no)
+    result = touch.identify(book, page, x, y, play_time=play_time, coord_space=str(body.get("coord_space", "image")))
+    result["audio_url"] = None      # 讲解语音需要 TTS 链路，后续接入
+    return ok(result)
 
 
 @bp.get("/history")

@@ -20,6 +20,7 @@ from typing import Optional
 
 from flask import Blueprint, current_app, request, send_file
 
+from . import touch
 from .book_store import check_book_id, check_page_no, with_urls
 from .envelope import begin_request, ok
 from .errors import AppError, NotFoundError, ValidationError
@@ -112,14 +113,6 @@ def _optional_float(args: dict, name: str) -> Optional[float]:
 
 def _truthy(value) -> bool:
     return str(value).lower() in ("1", "true", "yes", "on")
-
-
-def _page_by_time(book: dict, play_time: float) -> dict:
-    for page in book["pages"]:
-        rng = page.get("time_range")
-        if rng and rng[0] <= play_time < rng[1]:
-            return page
-    return book["pages"][-1] if play_time >= (book.get("video") or {}).get("duration", 0) else book["pages"][0]
 
 
 @bp.before_request
@@ -373,34 +366,7 @@ def touch_identify():
     x, y = _optional_float(args, "x"), _optional_float(args, "y")
     if x is None or y is None:
         raise ValidationError("缺少点击坐标 x、y", details={"field": "x,y"})
-    play_time = _optional_float(args, "play_time")
-    normalized = str(args.get("coord_space", "image")).lower() == "normalized"
-
-    if play_time is not None:
-        page = _page_by_time(book, play_time)
-        frame = min(page["keyframes"], key=lambda k: abs(k["time"] - play_time))
-        objects, size, source = frame["objects"], frame["frame_size"], "keyframe"
-    else:
-        page = _page(book, page_no)
-        frame, objects, size, source = None, page["objects"], page["image_size"], "page"
-    if normalized:
-        if not (0 <= x <= 1 and 0 <= y <= 1):
-            raise ValidationError("归一化坐标应在 0 到 1 之间", details={"field": "x,y"})
-        x, y = x * size["width"], y * size["height"]
-    if not (0 <= x <= size["width"] and 0 <= y <= size["height"]):
-        raise ValidationError(f"坐标超出画面范围（{size['width']}×{size['height']}）", code="POINT_OUT_OF_RANGE",
-                              details={"field": "x,y"})
-
-    hits = [o for o in objects if o["bbox"][0] <= x <= o["bbox"][2] and o["bbox"][1] <= y <= o["bbox"][3]]
-    hits.sort(key=lambda o: (o["bbox"][2] - o["bbox"][0]) * (o["bbox"][3] - o["bbox"][1]))   # 重叠时取最小的框
-    best = hits[0] if hits else None
-    return ok({
-        "hit": bool(best),
-        "object": {"name": best["name"], "bbox": best["bbox"], "explanation": best["explanation"]} if best else None,
-        "candidates": [o["name"] for o in hits],
-        "source": source, "page_no": page["page_no"],
-        "keyframe_time": frame["time"] if frame else None,
-        "frame_size": size, "point": {"x": round(x, 1), "y": round(y, 1)},
-        "audio_url": _media_url(f"audio/page_{page['page_no']:03d}.wav") if best else None,
-        "timings": {"lookup_ms": 2, "tts_ms": 0},
-    })
+    result = touch.identify(book, _page(book, page_no), x, y, play_time=_optional_float(args, "play_time"),
+                            coord_space=str(args.get("coord_space", "image")))
+    result["audio_url"] = _media_url(f"audio/page_{result['page_no']:03d}.wav") if result["hit"] else None
+    return ok(result)

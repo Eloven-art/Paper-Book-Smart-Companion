@@ -125,6 +125,9 @@ class Settings:
     data_dir: Path
     books_dir: Path
     samples_dir: Path
+    web_dir: Path
+    install_sample: bool
+    voice_service_url: Optional[str]
     log_dir: Path
     prompts_dir: Path
     pricing_file: Path
@@ -244,6 +247,9 @@ def load_settings(environ: Optional[Mapping[str, str]] = None, use_dotenv: bool 
         data_dir=data_dir,
         books_dir=data_dir / "books",
         samples_dir=ROOT / "data" / "samples",
+        web_dir=env.path("PBSC_WEB_DIR", ROOT / "前端"),
+        install_sample=env.flag("PBSC_INSTALL_SAMPLE", True),
+        voice_service_url=env.text("PBSC_VOICE_SERVICE_URL"),
         log_dir=log_dir,
         prompts_dir=ROOT / "configs" / "prompts",
         pricing_file=env.path("PBSC_PRICING_FILE", ROOT / "configs" / "pricing.json"),
