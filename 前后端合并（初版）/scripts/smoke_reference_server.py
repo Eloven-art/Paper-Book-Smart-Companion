@@ -33,7 +33,7 @@ from pathlib import Path
 from typing import Any, Callable, Optional
 
 ROOT = Path(__file__).resolve().parent.parent
-REF_DIR = ROOT / "参考代码"
+REF_DIR = ROOT.parent / "赛题内容" / "参考代码"
 
 # 参考后端用到的外部服务及其环境变量（见 参考代码/config.py）
 EXTERNAL_ENV = {

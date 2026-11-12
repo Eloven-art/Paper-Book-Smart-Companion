@@ -1,0 +1,64 @@
+{
+  "run_id": "video_book-20261111T085818-965784",
+  "kind": "video_book",
+  "parent_run_id": null,
+  "status": "ok",
+  "started_at": "2026-11-11T08:58:18.102+08:00",
+  "finished_at": "2026-11-11T08:58:40.517+08:00",
+  "elapsed_ms": 22415,
+  "code_version": "326ebd2",
+  "input": {
+    "book_id": "demo_book",
+    "pages": [
+      1,
+      2,
+      3
+    ],
+    "force": false
+  },
+  "prompt": null,
+  "model": null,
+  "outputs": [
+    {
+      "role": "book_video",
+      "path": "data/books/demo_book/video/book.mp4",
+      "bytes": 1214361,
+      "sha256": "58c0aa877b0b8ca709920fdc306d4923cab907b5a11cbe0d5a218113493b3efa",
+      "duration": 28.42
+    },
+    {
+      "role": "clip_index",
+      "path": "data/books/demo_book/video/clip_index.json",
+      "bytes": 4600,
+      "sha256": "52e56c4363ae05c81d6b2f6167a9b65227933ad06ef965dd3863e47f17ed2fe6"
+    }
+  ],
+  "cost": null,
+  "notes": {
+    "degraded": true,
+    "pages": [
+      {
+        "page_no": 1,
+        "provider": "local_kenburns",
+        "is_fallback": true,
+        "raw_cached": false,
+        "run_id": "video_page-20261111T085818-0342f2"
+      },
+      {
+        "page_no": 2,
+        "provider": "local_kenburns",
+        "is_fallback": true,
+        "raw_cached": false,
+        "run_id": "video_page-20261111T085823-2b2cae"
+      },
+      {
+        "page_no": 3,
+        "provider": "local_kenburns",
+        "is_fallback": true,
+        "raw_cached": false,
+        "run_id": "video_page-20261111T085828-ee9855"
+      }
+    ]
+  },
+  "error": null
+}

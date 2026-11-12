@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-REF_DIR = ROOT / "参考代码"
+REF_DIR = ROOT.parent / "赛题内容" / "参考代码"
 PREFIX = "/tts-story-book"
 
 
