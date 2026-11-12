@@ -8,7 +8,7 @@ venv/
 *.env
 # 运行产物
 output_dir/
-logs/*.log
+**/logs/*.log
 # 系统文件
 .DS_Store
 Thumbs.db
@@ -16,16 +16,16 @@ desktop.ini
 ~$*
 
 # 运行时数据（可能含受限的官方绘本，不入库）；data/samples/ 是自制示例，入库
-data/books/
-data/uploads/
-data/reference_runtime/
+**/data/books/
+**/data/uploads/
+**/data/reference_runtime/
 # 运行记录、任务状态、费用台账（可能含绘本内容）；logs/examples/ 是自制示例上的记录，入库
-logs/runs/
-logs/tasks/
-logs/cost_ledger.jsonl
+**/logs/runs/
+**/logs/tasks/
+**/logs/cost_ledger.jsonl
 # 测试与临时文件
 .pytest_cache/
 *.part
 .tmp_audio_*
 # 前端音色模块运行时数据（含参考声音录音，属于个人语音数据，不入库）
-前端/work/
+**/前端/work/
