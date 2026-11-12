@@ -5,7 +5,7 @@
 访问：
     /api/v1/...        真实接口
     /mock/api/v1/...   假接口（固定示例数据）
-    /                  如果存在 web/index.html 则托管前端页面
+    /                  托管前端页面（默认 前端/ 目录，可用 PBSC_WEB_DIR 指定）
 """
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ from werkzeug.exceptions import HTTPException
 from agents.pipeline import build_pipeline
 from configs.settings import Settings, get_settings
 
-from . import api, mock_api
+from . import api, mock_api, voice_bridge
 from .envelope import begin_request, fail
 from .errors import AppError
 from .task_queue import TaskManager
@@ -30,18 +30,23 @@ VERSION = "0.1.0"
 def create_app(settings: Optional[Settings] = None) -> Flask:
     settings = settings or get_settings()
     settings.ensure_dirs()
-    web_dir = settings.root / "web"
+    web_dir = settings.web_dir
     app = Flask(__name__, static_folder=None)
     app.json.ensure_ascii = False
     # 整个请求体的上限：单文件上限 × 页数上限，另留 1 MB 给表单字段
     app.config["MAX_CONTENT_LENGTH"] = int(settings.max_upload_mb * 1024 * 1024 * settings.max_pages_per_upload) + (1 << 20)
 
     pipeline = build_pipeline(settings)
+    sample = settings.samples_dir / "demo_book"
+    if settings.install_sample and not pipeline.store.list_ids() and (sample / "book.json").is_file():
+        # 首次启动时放入自制示例绘本，打开页面就有书可读（真实链路会重新生成旁白和视频）
+        pipeline.store.install_sample(sample)
     tasks = TaskManager(workers=settings.task_workers, store_dir=settings.tasks_dir)
     app.extensions["pbsc"] = {"settings": settings, "pipeline": pipeline, "tasks": tasks}
 
     app.register_blueprint(api.bp)
     app.register_blueprint(mock_api.bp)
+    app.register_blueprint(voice_bridge.bp)
 
     def is_api_path() -> bool:
         return request.path.startswith(("/api/", "/mock/api/"))
@@ -95,11 +100,13 @@ def create_app(settings: Optional[Settings] = None) -> Flask:
 
     @app.get("/<path:filename>")
     def web_files(filename: str):
-        if filename.startswith(("api/", "mock/")):
-            from werkzeug.exceptions import NotFound
-            raise NotFound()
-        if web_dir.is_dir():
+        # 仅发布页面资源；前端目录还包含后端源码、环境文件和声音数据库。
+        parts = filename.split("/")
+        allowed = filename in {"app.js", "style.css", "api/service.js", "api/voice.js", "ui/voice-panel.js"}
+        allowed = allowed or (parts[0] == "assets" and all(not p.startswith(".") for p in parts))
+        if allowed and web_dir.is_dir():
             return send_from_directory(web_dir, filename)
-        return jsonify({"error": "not found"}), 404
+        from werkzeug.exceptions import NotFound
+        raise NotFound()
 
     return app

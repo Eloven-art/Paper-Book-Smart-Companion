@@ -47,7 +47,8 @@ def make_png_bytes(size=(320, 180), color=(180, 200, 240)) -> bytes:
 
 
 def make_settings(tmp_path: Path, **env):
-    base = {"PBSC_DATA_DIR": str(tmp_path / "data"), "PBSC_LOG_DIR": str(tmp_path / "logs"), **SMALL_VIDEO}
+    base = {"PBSC_DATA_DIR": str(tmp_path / "data"), "PBSC_LOG_DIR": str(tmp_path / "logs"),
+            "PBSC_INSTALL_SAMPLE": "0", **SMALL_VIDEO}
     base.update(env)
     settings = load_settings(base, use_dotenv=False)
     settings.ensure_dirs()
