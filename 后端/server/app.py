@@ -30,7 +30,7 @@ VERSION = "0.1.0"
 def create_app(settings: Optional[Settings] = None) -> Flask:
     settings = settings or get_settings()
     settings.ensure_dirs()
-    web_dir = settings.root / "web"
+    web_dir = settings.web_dir
     app = Flask(__name__, static_folder=None)
     app.json.ensure_ascii = False
     # 整个请求体的上限：单文件上限 × 页数上限，另留 1 MB 给表单字段
@@ -95,7 +95,8 @@ def create_app(settings: Optional[Settings] = None) -> Flask:
 
     @app.get("/<path:filename>")
     def web_files(filename: str):
-        if filename.startswith(("api/", "mock/")):
+        # 只挡真正的接口路径；前端的 api/service.js、api/voice.js 是静态模块文件，要放行
+        if filename.startswith("api/v1/") or filename.startswith("mock/"):
             from werkzeug.exceptions import NotFound
             raise NotFound()
         if web_dir.is_dir():
