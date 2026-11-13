@@ -35,7 +35,7 @@ def wait_task(client, prefix: str, task_id: str, timeout: float = 60.0) -> dict:
 # ---------------------------------------------------------------- 外壳与错误
 def test_envelope_on_success_and_errors(client):
     ok = body_of(client.get(f"{API}/health"))
-    assert ok["mock"] is False and ok["data"]["degraded"] == ["llm", "tts", "i2v"]
+    assert ok["mock"] is False and ok["data"]["degraded"] == ["llm", "tts", "i2v", "vlm"]
     assert body_of(client.get(f"{MOCK}/health"))["mock"] is True
 
     for resp, status, code in [
@@ -51,10 +51,14 @@ def test_envelope_on_success_and_errors(client):
 
 
 def test_unfinished_real_endpoints_point_to_mock(client):
-    resp = client.post(f"{API}/qa/ask", json={"book_id": "demo_book", "page_no": 1, "question": "?"})
-    assert resp.status_code == 501
-    error = body_of(resp)["error"]
-    assert error["code"] == "NOT_IMPLEMENTED" and error["details"]["mock_path"] == f"{MOCK}/qa/ask"
+    for path in ("asr", "tts"):
+        resp = client.post(f"{API}/{path}", json={})
+        assert resp.status_code == 501
+        error = body_of(resp)["error"]
+        assert error["code"] == "NOT_IMPLEMENTED" and error["details"]["mock_path"] == f"{MOCK}/{path}"
+    # 问答已经接了真实实现：不再报“未实现”，书不存在时先是 404
+    resp = client.post(f"{API}/qa/ask", json={"book_id": "no_such_book", "page_no": 1, "question": "?"})
+    assert resp.status_code == 404 and body_of(resp)["error"]["code"] == "BOOK_NOT_FOUND"
 
 
 def test_cors_headers_and_preflight(client):

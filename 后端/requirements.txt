@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 # 纸书智伴后端依赖（server/、agents/、scripts/）。Python 3.10 及以上；已在 Python 3.13 上验证。
+# 换行上面这行 coding 声明不能删：中文 Windows 的 pip 默认按 GBK 读这个文件，会报 UnicodeDecodeError。
 # 安装：python -m venv .venv && .venv\Scripts\pip install -r requirements.txt   （Linux/macOS 用 .venv/bin/pip）
 flask>=3.0,<4
 requests>=2.31,<3

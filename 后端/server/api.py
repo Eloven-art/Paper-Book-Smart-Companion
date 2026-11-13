@@ -93,7 +93,8 @@ def upload_book():
     """上传一本绘本的页面图片（multipart，字段 pages 可重复，按上传顺序编页码）。
 
     全部文件先校验，任何一个不合格就整体拒绝，不会留下半本书。
-    内容理解字段（OCR、物体、摘要等）留空，等 B 的模块填充。
+    页面保存后，如果 VLM 已配置，会自动排一个 understanding 任务做画面理解
+    （OCR、物体、摘要等）；没配置就把这些字段留空，返回的 task_id 为 null。
     """
     settings = _ext()["settings"]
     files = request.files.getlist("pages")
@@ -115,10 +116,51 @@ def upload_book():
         page["source_reference"].update(original_filename=upload.original_name, sha256=upload.sha256)
         book["pages"].append(page)
     store.save(book)
+
+    task = None
+    if settings.vlm.configured:
+        pipeline, tasks = _ext()["pipeline"], _ext()["tasks"]
+
+        def job(ctx: TaskContext) -> dict:
+            return pipeline.understanding.understand_book(book["book_id"], progress=ctx.progress,
+                                                         check_cancelled=ctx.check_cancelled)
+
+        task = tasks.submit("understanding", job, params={"book_id": book["book_id"]},
+                            book_id=book["book_id"],
+                            dedupe_key=f"understanding:{book['book_id']}:all")
+
     return ok({"book_id": book["book_id"], "title": book["title"], "page_count": len(uploads),
                "accepted_pages": [{"page_no": i, "filename": u.original_name, "bytes": u.size,
                                    "width": u.width, "height": u.height} for i, u in enumerate(uploads, 1)],
-               "task_id": None, "note": "页面已保存。OCR 与画面理解由内容理解模块完成后写入分页数据"}, 201)
+               "task_id": task["task_id"] if task else None,
+               "note": "页面已保存。画面理解已排入队列，轮询 GET /tasks/{task_id} 看进度"
+                       if task else "页面已保存。VLM 未配置，画面理解字段留空"}, 201)
+
+
+@bp.post("/books/<book_id>/understand")
+def understand_book(book_id: str):
+    """对已存在的绘本重跑画面理解。可带 page_no 只跑一页，force=true 覆盖已有结果。"""
+    book_id = check_book_id(book_id)
+    book = _store().load(book_id)
+    body = _body()
+    page_no = check_page_no(body["page_no"]) if body.get("page_no") not in (None, "") else None
+    if page_no is not None:
+        BookStore.get_page(book, page_no)
+    pipeline, tasks = _ext()["pipeline"], _ext()["tasks"]
+    if not pipeline.understanding.configured:
+        _pending("画面理解", "/mock/api/v1/books/demo_book/pages/1")
+    force = _flag(body.get("force", False))
+
+    def job(ctx: TaskContext) -> dict:
+        return pipeline.understanding.understand_book(
+            book_id, pages=[page_no] if page_no else None, force=force,
+            progress=ctx.progress, check_cancelled=ctx.check_cancelled)
+
+    task = tasks.submit("understanding", job,
+                        params={"book_id": book_id, "page_no": page_no, "force": force},
+                        book_id=book_id, page_no=page_no,
+                        dedupe_key=f"understanding:{book_id}:{page_no or 'all'}")
+    return ok(public_task(task), 202)
 
 
 @bp.get("/books/<book_id>")
@@ -251,12 +293,110 @@ def tts():
 
 @bp.post("/qa/ask")
 def qa_ask():
-    _pending("问答", "/mock/api/v1/qa/ask")
+    """提问。文字走 question 字段（语音上传等 ASR 接进来再支持）。
+
+    回答依据本页的 ocr_text / scene_summary / plot_events / objects 和相邻页原文；
+    首选用文本大模型，没配置时退回 VLM 看图回答。grounded=false 表示书里找不到依据。
+    """
+    body = _body()
+    book_id = check_book_id(body.get("book_id"))
+    page_no = check_page_no(body.get("page_no"))
+    question = str(body.get("question") or "").strip()
+    if not question:
+        raise ValidationError("question 不能为空", details={"field": "question"})
+    if request.files.get("audio"):
+        _pending("语音识别", "/mock/api/v1/asr")
+    book = _store().load(book_id)
+    BookStore.get_page(book, page_no)
+    play_time = body.get("play_time")
+    try:
+        play_time = float(play_time) if play_time not in (None, "") else None
+    except (TypeError, ValueError):
+        raise ValidationError("play_time 应为秒数", details={"field": "play_time"}) from None
+    pipeline = _ext()["pipeline"]
+    turn = pipeline.qa.ask(book_id, page_no, question, play_time=play_time,
+                           session_id=body.get("session_id"))
+    return ok(turn)
+
+
+def _bbox_hit(bbox, x: float, y: float) -> bool:
+    return bool(bbox) and len(bbox) == 4 and bbox[0] <= x <= bbox[2] and bbox[1] <= y <= bbox[3]
+
+
+def _bbox_area(bbox) -> float:
+    return max(0.0, float(bbox[2]) - float(bbox[0])) * max(0.0, float(bbox[3]) - float(bbox[1]))
+
+
+def _nearest_keyframe(page: dict, play_time: float) -> Optional[dict]:
+    """视频暂停时按时间找最近的关键帧。没有关键帧数据就返回 None。"""
+    best, best_gap = None, None
+    for frame in page.get("keyframes") or []:
+        try:
+            gap = abs(float(frame.get("time")) - play_time)
+        except (TypeError, ValueError):
+            continue
+        if best_gap is None or gap < best_gap:
+            best, best_gap = frame, gap
+    return best
 
 
 @bp.post("/touch/identify")
 def touch_identify():
-    _pending("触控识别", "/mock/api/v1/touch/identify")
+    """点击识物：在画面理解写好的 objects 里查框，毫秒级返回，不再调用模型。
+
+    静态页按页图的 objects 查；带 play_time 时优先用最近关键帧的对象表
+    （视频里画面会动，不能把原页图的框直接套上去）；没有关键帧就退回页图对象，
+    并在 source 字段里标明用的是哪一种。
+    """
+    started = time.perf_counter()
+    body = _body()
+    book_id = check_book_id(body.get("book_id"))
+    page_no = check_page_no(body.get("page_no"))
+    page = BookStore.get_page(_store().load(book_id), page_no)
+
+    size = page.get("image_size") or {}
+    width, height = int(size.get("width") or 0), int(size.get("height") or 0)
+    if width <= 0 or height <= 0:
+        raise ValidationError("这一页没有画面尺寸，无法按坐标识物",
+                              code="PAGE_IMAGE_MISSING", details={"book_id": book_id, "page_no": page_no})
+    try:
+        x, y = float(body["x"]), float(body["y"])
+    except (KeyError, TypeError, ValueError):
+        raise ValidationError("x、y 必须是数字", details={"field": "x/y"}) from None
+    if str(body.get("coord_space") or "image") == "normalized":
+        x, y = x * width, y * height
+    if not (0 <= x <= width and 0 <= y <= height):
+        raise ValidationError(f"点击坐标 ({x:.0f}, {y:.0f}) 超出画面 {width}x{height}",
+                              code="POINT_OUT_OF_RANGE",
+                              details={"book_id": book_id, "page_no": page_no, "point": {"x": x, "y": y}})
+
+    source, targets = "page", page.get("objects") or []
+    frame_size = {"width": width, "height": height}
+    keyframe_time = None
+    play_time = body.get("play_time")
+    if play_time not in (None, ""):
+        try:
+            frame = _nearest_keyframe(page, float(play_time))
+        except (TypeError, ValueError):
+            frame = None
+        if frame and frame.get("objects"):
+            source, targets = "keyframe", frame["objects"]
+            keyframe_time = frame.get("time")
+            frame_size = frame.get("frame_size") or frame_size
+
+    hits = [item for item in targets if _bbox_hit(item.get("bbox"), x, y)]
+    # 框重叠时返回面积最小的那个：点到围巾应该返回“围巾”，不是整个人物
+    best = min(hits, key=lambda item: _bbox_area(item["bbox"])) if hits else None
+    return ok({
+        "hit": best is not None,
+        "object": {"name": best.get("name"), "bbox": best.get("bbox"),
+                   "explanation": best.get("explanation") or ""} if best else None,
+        "candidates": [item.get("name") for item in hits],
+        "source": source, "page_no": page_no, "keyframe_time": keyframe_time,
+        "frame_size": frame_size, "point": {"x": round(x, 1), "y": round(y, 1)},
+        "audio_url": None,
+        "timings": {"lookup_ms": int((time.perf_counter() - started) * 1000), "tts_ms": 0},
+    })
 
 
 @bp.get("/history")

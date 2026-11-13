@@ -125,6 +125,7 @@ class Settings:
     data_dir: Path
     books_dir: Path
     samples_dir: Path
+    web_dir: Path
     log_dir: Path
     prompts_dir: Path
     pricing_file: Path
@@ -147,6 +148,7 @@ class Settings:
     llm: ServiceConfig
     tts: ServiceConfig
     i2v: ServiceConfig
+    vlm: ServiceConfig
     video: VideoConfig
 
     @property
@@ -168,7 +170,7 @@ class Settings:
     def public_summary(self) -> dict:
         """可以放进接口返回和日志的配置摘要（不含任何密钥）。"""
         return {
-            "services": {s.name: s.public() for s in (self.llm, self.tts, self.i2v)},
+            "services": {s.name: s.public() for s in (self.llm, self.tts, self.i2v, self.vlm)},
             "limits": {"max_upload_mb": self.max_upload_mb, "max_pages_per_upload": self.max_pages_per_upload,
                        "task_workers": self.task_workers},
             "video": {"size": [self.video.width, self.video.height], "fps": self.video.fps,
@@ -244,6 +246,7 @@ def load_settings(environ: Optional[Mapping[str, str]] = None, use_dotenv: bool 
         data_dir=data_dir,
         books_dir=data_dir / "books",
         samples_dir=ROOT / "data" / "samples",
+        web_dir=env.path("PBSC_WEB_DIR", ROOT / "web"),
         log_dir=log_dir,
         prompts_dir=ROOT / "configs" / "prompts",
         pricing_file=env.path("PBSC_PRICING_FILE", ROOT / "configs" / "pricing.json"),
@@ -275,6 +278,12 @@ def load_settings(environ: Optional[Mapping[str, str]] = None, use_dotenv: bool 
             url=env.text("IMAGE2VIDEO_URL"),
             api_key=env.text("IMAGE2VIDEO_API_KEY"),
             model=env.text("IMAGE2VIDEO_MODEL", "doubao-seedance-1.0-lite-i2v"),
+        ),
+        vlm=ServiceConfig(
+            name="vlm",
+            url=env.text("IMAGE_ANALYSIS_URL"),
+            api_key=env.text("IMAGE_API_KEY"),
+            model=env.text("IMAGE_MODEL", "glm-4.6v-flash"),
         ),
         video=video,
     )
