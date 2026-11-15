@@ -21,3 +21,9 @@
 - 目录规划：`configs/ agents/ server/ web/ eval/ scripts/ tests/ logs/ docs/ data/`。其中 `server/`（后端服务）、`scripts/`（命令行脚本）、`tests/`（自动化测试）是后端开发时新增的。
 - 后端：`python -m server` 启动；改动后运行 `python -m pytest`；接口字段以 `docs/接口约定_v0.1.md` 为准。
 - 提示词放在 `configs/prompts/`，文件名即版本号；修改时另存为新版本，不直接改旧文件。
+
+## 校赛联调演示
+
+- 联调演示第二版只用自制绘本、自编题目和成人录制或合成音频。
+- 阅读工具已接入录音、试听和真实模式的 /api/v1/asr；预览入口展示样例流程。真实转写需本机 ASR 模型。
+- 冷启动和自测见 [同学运行说明](联调演示第二版/同学运行说明.md) 及 [校赛验收](联调演示第二版/前后端合并（初版）/docs/校赛验收.md)。
