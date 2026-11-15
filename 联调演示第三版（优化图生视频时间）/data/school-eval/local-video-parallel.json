@@ -1,0 +1,25 @@
+{
+  "scope": "single offline smoke with concurrent machine load; no cloud billing",
+  "results": [
+    {
+      "workers": 1,
+      "wall_seconds": 8.37,
+      "pages_in_video": [
+        1,
+        2,
+        3
+      ],
+      "billable_calls": 0
+    },
+    {
+      "workers": 2,
+      "wall_seconds": 5.4,
+      "pages_in_video": [
+        1,
+        2,
+        3
+      ],
+      "billable_calls": 0
+    }
+  ]
+}

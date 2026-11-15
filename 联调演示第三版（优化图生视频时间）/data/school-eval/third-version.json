@@ -1,0 +1,2065 @@
+{
+  "scope": "校赛自测·自制绘本·关键词初判，需人工复核",
+  "configuration": "v3-4B-CPU-review-on",
+  "metrics": {
+    "text": {
+      "cases": 30,
+      "completed": 30,
+      "errors": 0,
+      "answer_accuracy": 0.9333333333333333,
+      "evidence_hit_rate": 0.7407407407407407,
+      "response_headers_p95_ms": 18733.6,
+      "response_p95_ms": 18734.9,
+      "audio_download_p95_ms": null
+    },
+    "text/原文": {
+      "cases": 13,
+      "completed": 13,
+      "errors": 0,
+      "answer_accuracy": 0.9230769230769231,
+      "evidence_hit_rate": 1.0,
+      "response_headers_p95_ms": 13373.2,
+      "response_p95_ms": 13374.1,
+      "audio_download_p95_ms": null
+    },
+    "audio": {
+      "cases": 30,
+      "completed": 30,
+      "errors": 0,
+      "answer_accuracy": 0.9,
+      "evidence_hit_rate": 0.7037037037037037,
+      "response_headers_p95_ms": 16591.3,
+      "response_p95_ms": 16592.3,
+      "audio_download_p95_ms": null
+    },
+    "audio/原文": {
+      "cases": 13,
+      "completed": 13,
+      "errors": 0,
+      "answer_accuracy": 0.8461538461538461,
+      "evidence_hit_rate": 0.9230769230769231,
+      "response_headers_p95_ms": 16089.3,
+      "response_p95_ms": 16091.7,
+      "audio_download_p95_ms": null
+    },
+    "text/跨页": {
+      "cases": 7,
+      "completed": 7,
+      "errors": 0,
+      "answer_accuracy": 1.0,
+      "evidence_hit_rate": 1.0,
+      "response_headers_p95_ms": 19780.3,
+      "response_p95_ms": 19780.9,
+      "audio_download_p95_ms": null
+    },
+    "audio/跨页": {
+      "cases": 7,
+      "completed": 7,
+      "errors": 0,
+      "answer_accuracy": 1.0,
+      "evidence_hit_rate": 1.0,
+      "response_headers_p95_ms": 16591.3,
+      "response_p95_ms": 16592.3,
+      "audio_download_p95_ms": null
+    },
+    "text/视频画面": {
+      "cases": 7,
+      "completed": 7,
+      "errors": 0,
+      "answer_accuracy": 0.8571428571428571,
+      "evidence_hit_rate": 0.0,
+      "response_headers_p95_ms": 18733.6,
+      "response_p95_ms": 18734.9,
+      "audio_download_p95_ms": null
+    },
+    "audio/视频画面": {
+      "cases": 7,
+      "completed": 7,
+      "errors": 0,
+      "answer_accuracy": 0.8571428571428571,
+      "evidence_hit_rate": 0.0,
+      "response_headers_p95_ms": 26151.5,
+      "response_p95_ms": 26153.7,
+      "audio_download_p95_ms": null
+    },
+    "text/书外拒答": {
+      "cases": 3,
+      "completed": 3,
+      "errors": 0,
+      "answer_accuracy": 1.0,
+      "evidence_hit_rate": null,
+      "response_headers_p95_ms": 8670.3,
+      "response_p95_ms": 8671.5,
+      "audio_download_p95_ms": null
+    },
+    "audio/书外拒答": {
+      "cases": 3,
+      "completed": 3,
+      "errors": 0,
+      "answer_accuracy": 1.0,
+      "evidence_hit_rate": null,
+      "response_headers_p95_ms": 5558.8,
+      "response_p95_ms": 5562.3,
+      "audio_download_p95_ms": null
+    }
+  },
+  "items": [
+    {
+      "id": "q01",
+      "category": "原文",
+      "page": 1,
+      "question": "故事的主角叫什么？",
+      "expected": "朵朵",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 12016.0,
+      "response_headers_ms": 12014.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "主角叫朵朵，是一只白色的小兔子。",
+      "transcript": "故事的主角叫什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "朵朵：这是故事的主角朵朵，一只白色的小兔子，脖子上围着蓝色的围巾。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11979,
+        "llm_ms": 11002,
+        "retrieve_ms": 1,
+        "review_ms": 976,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q01",
+      "category": "原文",
+      "page": 1,
+      "question": "故事的主角叫什么？",
+      "expected": "朵朵",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 16091.7,
+      "response_headers_ms": 16089.3,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "主角叫朵朵，是一只白色的小兔子。",
+      "transcript": "故事的主角叫什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "朵朵：这是故事的主角朵朵，一只白色的小兔子，脖子上围着蓝色的围巾。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 1274,
+        "first_audio_ms": 10103,
+        "llm_ms": 8589,
+        "retrieve_ms": 0,
+        "review_ms": 240,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q02",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵是什么动物？",
+      "expected": "兔",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 11882.6,
+      "response_headers_ms": 11881.8,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵是一只白色的小兔子。",
+      "transcript": "朵朵是什么动物？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "朵朵：这是故事的主角朵朵，一只白色的小兔子，脖子上围着蓝色的围巾。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11868,
+        "llm_ms": 11117,
+        "retrieve_ms": 1,
+        "review_ms": 750,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q02",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵是什么动物？",
+      "expected": "兔",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 8850.9,
+      "response_headers_ms": 8849.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵是一只白色的小兔子。",
+      "transcript": "朵朵是什么动物？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "朵朵：这是故事的主角朵朵，一只白色的小兔子，脖子上围着蓝色的围巾。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 107,
+        "first_audio_ms": 8818,
+        "llm_ms": 8455,
+        "retrieve_ms": 1,
+        "review_ms": 255,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q03",
+      "category": "原文",
+      "page": 1,
+      "question": "故事开头是什么时候？",
+      "expected": "夜晚|晚上",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 9232.2,
+      "response_headers_ms": 9231.3,
+      "correct": false,
+      "evidence_hit": true,
+      "answer": "故事开头是朵朵在找月亮的时候。",
+      "transcript": "故事开头是什么时候？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "朵朵：这是故事的主角朵朵，一只白色的小兔子，脖子上围着蓝色的围巾。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 9217,
+        "llm_ms": 8457,
+        "retrieve_ms": 0,
+        "review_ms": 760,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q03",
+      "category": "原文",
+      "page": 1,
+      "question": "故事开头是什么时候？",
+      "expected": "夜晚|晚上",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 8149.5,
+      "response_headers_ms": 8148.3,
+      "correct": false,
+      "evidence_hit": true,
+      "answer": "故事开头是朵朵在找月亮的时候。",
+      "transcript": "故事开头是什么时候？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "朵朵：这是故事的主角朵朵，一只白色的小兔子，脖子上围着蓝色的围巾。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 125,
+        "first_audio_ms": 8132,
+        "llm_ms": 7752,
+        "retrieve_ms": 0,
+        "review_ms": 255,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q04",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵一开始站在哪里？",
+      "expected": "草地",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 12290.3,
+      "response_headers_ms": 12289.7,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵一开始站在夜晚的草地上仰头看月亮。",
+      "transcript": "朵朵一开始站在哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 12282,
+        "llm_ms": 11416,
+        "retrieve_ms": 0,
+        "review_ms": 866,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q04",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵一开始站在哪里？",
+      "expected": "草地",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 9068.1,
+      "response_headers_ms": 9067.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵一开始站在夜晚的草地上仰头看月亮。",
+      "transcript": "朵朵一开始站在哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 127,
+        "first_audio_ms": 9050,
+        "llm_ms": 8675,
+        "retrieve_ms": 0,
+        "review_ms": 248,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q05",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵抬头看见了什么？",
+      "expected": "月亮",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 11723.7,
+      "response_headers_ms": 11722.9,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵抬头看见了圆圆的月亮。",
+      "transcript": "朵朵抬头看见了什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11710,
+        "llm_ms": 10957,
+        "retrieve_ms": 0,
+        "review_ms": 753,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q05",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵抬头看见了什么？",
+      "expected": "月亮",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 12022.4,
+      "response_headers_ms": 12020.8,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵抬头看见了圆圆的月亮。",
+      "transcript": "朵朵抬头看见了什么。",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 151,
+        "first_audio_ms": 12000,
+        "llm_ms": 11096,
+        "retrieve_ms": 0,
+        "review_ms": 753,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q06",
+      "category": "原文",
+      "page": 1,
+      "question": "他看到的月亮是什么形状？",
+      "expected": "圆",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 13374.1,
+      "response_headers_ms": 13373.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "月亮是圆圆的。夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+      "transcript": "他看到的月亮是什么形状？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 13364,
+        "llm_ms": 12573,
+        "retrieve_ms": 0,
+        "review_ms": 791,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q06",
+      "category": "原文",
+      "page": 1,
+      "question": "他看到的月亮是什么形状？",
+      "expected": "圆",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 10384.6,
+      "response_headers_ms": 10383.1,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "月亮是圆圆的。夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+      "transcript": "他看到的月亮是什么形状？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 132,
+        "first_audio_ms": 10337,
+        "llm_ms": 9957,
+        "retrieve_ms": 1,
+        "review_ms": 247,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q07",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵心里在想什么？",
+      "expected": "月亮&哪里",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 10788.0,
+      "response_headers_ms": 10787.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵在想：月亮住在哪里呢？",
+      "transcript": "朵朵心里在想什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "“月亮住在哪里呢？”朵朵想。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 10773,
+        "llm_ms": 10018,
+        "retrieve_ms": 1,
+        "review_ms": 754,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q07",
+      "category": "原文",
+      "page": 1,
+      "question": "朵朵心里在想什么？",
+      "expected": "月亮&哪里",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 7606.0,
+      "response_headers_ms": 7604.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵在想：月亮住在哪里呢？",
+      "transcript": "朵朵心里在想什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "“月亮住在哪里呢？”朵朵想。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 111,
+        "first_audio_ms": 7583,
+        "llm_ms": 7223,
+        "retrieve_ms": 0,
+        "review_ms": 249,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q08",
+      "category": "原文",
+      "page": 2,
+      "question": "朵朵后来走到哪里？",
+      "expected": "河边|小河",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 12807.0,
+      "response_headers_ms": 12806.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵走到小河边，发现月亮掉进了水里。",
+      "transcript": "朵朵后来走到哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 12795,
+        "llm_ms": 11808,
+        "retrieve_ms": 0,
+        "review_ms": 987,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q08",
+      "category": "原文",
+      "page": 2,
+      "question": "朵朵后来走到哪里？",
+      "expected": "河边|小河",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 4720.1,
+      "response_headers_ms": 4718.3,
+      "correct": false,
+      "evidence_hit": false,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "博果后来走到哪里？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 141,
+        "first_audio_ms": 4699,
+        "llm_ms": 4557,
+        "retrieve_ms": 1,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q09",
+      "category": "原文",
+      "page": 2,
+      "question": "朵朵以为月亮掉到哪了？",
+      "expected": "水里|河里|河水",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 11084.9,
+      "response_headers_ms": 11083.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵以为月亮掉进了水里。",
+      "transcript": "朵朵以为月亮掉到哪了？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11069,
+        "llm_ms": 10305,
+        "retrieve_ms": 1,
+        "review_ms": 763,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q09",
+      "category": "原文",
+      "page": 2,
+      "question": "朵朵以为月亮掉到哪了？",
+      "expected": "水里|河里|河水",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 7941.9,
+      "response_headers_ms": 7941.0,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵以为月亮掉进了水里。",
+      "transcript": "朵朵以为月亮掉到哪了？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 120,
+        "first_audio_ms": 7926,
+        "llm_ms": 7558,
+        "retrieve_ms": 0,
+        "review_ms": 248,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q10",
+      "category": "原文",
+      "page": 2,
+      "question": "谁告诉朵朵那是月亮的影子？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 11709.4,
+      "response_headers_ms": 11708.7,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷告诉朵朵那是月亮的影子",
+      "transcript": "谁告诉朵朵那是月亮的影子？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "乌龟爷爷慢慢地说：“那是月亮的影子。”",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11697,
+        "llm_ms": 10916,
+        "retrieve_ms": 0,
+        "review_ms": 781,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q10",
+      "category": "原文",
+      "page": 2,
+      "question": "谁告诉朵朵那是月亮的影子？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 12134.6,
+      "response_headers_ms": 12133.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷告诉朵朵，那是月亮的影子。",
+      "transcript": "谁告诉朵朵，那是月亮的影子？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "乌龟爷爷慢慢地说：“那是月亮的影子。”",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 153,
+        "first_audio_ms": 12118,
+        "llm_ms": 11198,
+        "retrieve_ms": 0,
+        "review_ms": 767,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q11",
+      "category": "原文",
+      "page": 2,
+      "question": "水里看到的月亮到底是什么？",
+      "expected": "倒影|影子",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 11378.0,
+      "response_headers_ms": 11377.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "水里看到的月亮是月亮的影子，水面把月亮照了出来。",
+      "transcript": "水里看到的月亮到底是什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "乌龟爷爷慢慢地说：“那是月亮的影子。”",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11367,
+        "llm_ms": 10587,
+        "retrieve_ms": 1,
+        "review_ms": 779,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q11",
+      "category": "原文",
+      "page": 2,
+      "question": "水里看到的月亮到底是什么？",
+      "expected": "倒影|影子",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 10505.4,
+      "response_headers_ms": 10504.1,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "水里看到的月亮是月亮的影子，是水面把月亮照出来的。",
+      "transcript": "水里看到的月亮到底是什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "月亮的影子：这是月亮在水里的倒影。月亮没有掉下来，是水面把月亮照了出来。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 144,
+        "first_audio_ms": 10463,
+        "llm_ms": 9506,
+        "retrieve_ms": 0,
+        "review_ms": 813,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q12",
+      "category": "原文",
+      "page": 2,
+      "question": "河边遇见了谁？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 8635.9,
+      "response_headers_ms": 8635.3,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵在河边遇见了乌龟爷爷。",
+      "transcript": "河边遇见了谁？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 8622,
+        "llm_ms": 7873,
+        "retrieve_ms": 0,
+        "review_ms": 749,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q12",
+      "category": "原文",
+      "page": 2,
+      "question": "河边遇见了谁？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 8505.0,
+      "response_headers_ms": 8503.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷在河边呢，月亮掉进水里了。",
+      "transcript": "河边遇见了谁？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 112,
+        "first_audio_ms": 8481,
+        "llm_ms": 7621,
+        "retrieve_ms": 1,
+        "review_ms": 747,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q13",
+      "category": "原文",
+      "page": 2,
+      "question": "乌龟爷爷说话快还是慢？",
+      "expected": "慢",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 11885.8,
+      "response_headers_ms": 11885.0,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷说话慢，因为他说‘那是月亮的影子’时是慢慢说的。",
+      "transcript": "乌龟爷爷说话快还是慢？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "乌龟爷爷慢慢地说：“那是月亮的影子。”",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11865,
+        "llm_ms": 11076,
+        "retrieve_ms": 0,
+        "review_ms": 789,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q13",
+      "category": "原文",
+      "page": 2,
+      "question": "乌龟爷爷说话快还是慢？",
+      "expected": "慢",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 8888.5,
+      "response_headers_ms": 8887.1,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷说话慢，因为他说‘慢慢地说’。",
+      "transcript": "乌龟爷爷说话快还是慢？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "乌龟爷爷慢慢地说：“那是月亮的影子。”",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 141,
+        "first_audio_ms": 8865,
+        "llm_ms": 7963,
+        "retrieve_ms": 0,
+        "review_ms": 761,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q14",
+      "category": "跨页",
+      "page": 3,
+      "question": "最后谁和朵朵一起看月亮？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 10938.2,
+      "response_headers_ms": 10936.3,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷和朵朵一起看月亮",
+      "transcript": "最后谁和朵朵一起看月亮？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 10923,
+        "llm_ms": 10155,
+        "retrieve_ms": 0,
+        "review_ms": 768,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q14",
+      "category": "跨页",
+      "page": 3,
+      "question": "最后谁和朵朵一起看月亮？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 11184.5,
+      "response_headers_ms": 11183.1,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "乌龟爷爷和朵朵一起看月亮",
+      "transcript": "最后，谁和朵朵一起看月亮？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 132,
+        "first_audio_ms": 11141,
+        "llm_ms": 10237,
+        "retrieve_ms": 1,
+        "review_ms": 771,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q15",
+      "category": "跨页",
+      "page": 3,
+      "question": "它们最后坐在哪里？",
+      "expected": "山坡",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 9147.2,
+      "response_headers_ms": 9146.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "它们坐在山坡上看月亮。",
+      "transcript": "它们最后坐在哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 9109,
+        "llm_ms": 8344,
+        "retrieve_ms": 0,
+        "review_ms": 765,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q15",
+      "category": "跨页",
+      "page": 3,
+      "question": "它们最后坐在哪里？",
+      "expected": "山坡",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 9501.5,
+      "response_headers_ms": 9500.4,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "他们坐在山坡上看月亮。",
+      "transcript": "他们最后坐在哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 119,
+        "first_audio_ms": 9478,
+        "llm_ms": 8585,
+        "retrieve_ms": 0,
+        "review_ms": 774,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q16",
+      "category": "跨页",
+      "page": 3,
+      "question": "月亮最后在哪里？",
+      "expected": "天上",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 10253.3,
+      "response_headers_ms": 10252.7,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "月亮一直在天上陪着大家。",
+      "transcript": "月亮最后在哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "原来，月亮一直在天上陪着大家。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 10221,
+        "llm_ms": 9454,
+        "retrieve_ms": 0,
+        "review_ms": 767,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q16",
+      "category": "跨页",
+      "page": 3,
+      "question": "月亮最后在哪里？",
+      "expected": "天上",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 6711.1,
+      "response_headers_ms": 6710.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "月亮一直在天上陪着大家。",
+      "transcript": "月亮最后在哪里？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "原来，月亮一直在天上陪着大家。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 96,
+        "first_audio_ms": 6692,
+        "llm_ms": 6356,
+        "retrieve_ms": 1,
+        "review_ms": 239,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q17",
+      "category": "跨页",
+      "page": 3,
+      "question": "朵朵和乌龟坐在山坡上做什么？",
+      "expected": "看月亮|看着月亮",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 11310.4,
+      "response_headers_ms": 11309.6,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+      "transcript": "朵朵和乌龟坐在山坡上做什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 11295,
+        "llm_ms": 10523,
+        "retrieve_ms": 0,
+        "review_ms": 772,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q17",
+      "category": "跨页",
+      "page": 3,
+      "question": "朵朵和乌龟坐在山坡上做什么？",
+      "expected": "看月亮|看着月亮",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 8252.3,
+      "response_headers_ms": 8250.5,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+      "transcript": "朵朵和乌龟坐在山坡上做什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 146,
+        "first_audio_ms": 8233,
+        "llm_ms": 7848,
+        "retrieve_ms": 0,
+        "review_ms": 239,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q18",
+      "category": "跨页",
+      "page": 3,
+      "question": "请按顺序说朵朵去了哪些地方？",
+      "expected": "草地&河&山坡",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 19780.9,
+      "response_headers_ms": 19780.3,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵先在草地上看月亮，然后去了小河边，最后和乌龟爷爷一起坐在山坡上看月亮。",
+      "transcript": "请按顺序说朵朵去了哪些地方？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        },
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 19771,
+        "llm_ms": 18824,
+        "retrieve_ms": 0,
+        "review_ms": 947,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q18",
+      "category": "跨页",
+      "page": 3,
+      "question": "请按顺序说朵朵去了哪些地方？",
+      "expected": "草地&河&山坡",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 16592.3,
+      "response_headers_ms": 16591.3,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵先在草地上看月亮，然后去了小河边，最后和乌龟爷爷一起坐在山坡上看月亮。",
+      "transcript": "请按顺序说朵朵去了哪些地方？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+          "type": "page"
+        },
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "朵朵走到小河边，发现月亮掉进了水里。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 122,
+        "first_audio_ms": 16575,
+        "llm_ms": 16199,
+        "retrieve_ms": 0,
+        "review_ms": 254,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q19",
+      "category": "跨页",
+      "page": 3,
+      "question": "月亮真的掉下去了吗？",
+      "expected": "没有|没掉|一直在天上",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 14675.4,
+      "response_headers_ms": 14674.4,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "月亮没有掉下去，是水里的倒影，月亮一直在天上陪着大家。",
+      "transcript": "月亮真的掉下去了吗？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "月亮的影子：这是月亮在水里的倒影。月亮没有掉下来，是水面把月亮照了出来。",
+          "type": "page"
+        },
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "原来，月亮一直在天上陪着大家。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 14665,
+        "llm_ms": 13719,
+        "retrieve_ms": 1,
+        "review_ms": 945,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q19",
+      "category": "跨页",
+      "page": 3,
+      "question": "月亮真的掉下去了吗？",
+      "expected": "没有|没掉|一直在天上",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 12239.6,
+      "response_headers_ms": 12236.4,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "月亮没有掉下去，是水里的倒影，月亮一直在天上陪着大家。",
+      "transcript": "月亮真的掉下去了吗？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "月亮的影子：这是月亮在水里的倒影。月亮没有掉下来，是水面把月亮照了出来。",
+          "type": "page"
+        },
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "原来，月亮一直在天上陪着大家。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 106,
+        "first_audio_ms": 12187,
+        "llm_ms": 11503,
+        "retrieve_ms": 1,
+        "review_ms": 577,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q20",
+      "category": "跨页",
+      "page": 3,
+      "question": "故事里朵朵遇见的伙伴是谁？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "text",
+      "response_ms": 13652.3,
+      "response_headers_ms": 13651.1,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵遇见的伙伴是乌龟爷爷。",
+      "transcript": "故事里朵朵遇见的伙伴是谁？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 13635,
+        "llm_ms": 12721,
+        "retrieve_ms": 1,
+        "review_ms": 913,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q20",
+      "category": "跨页",
+      "page": 3,
+      "question": "故事里朵朵遇见的伙伴是谁？",
+      "expected": "乌龟",
+      "evidence_pages": [
+        1,
+        2,
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 15947.5,
+      "response_headers_ms": 15945.2,
+      "correct": true,
+      "evidence_hit": true,
+      "answer": "朵朵遇见的伙伴是乌龟爷爷。",
+      "transcript": "故事里，朵朵遇见的伙伴是谁？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 326,
+        "first_audio_ms": 15898,
+        "llm_ms": 14637,
+        "retrieve_ms": 1,
+        "review_ms": 934,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q21",
+      "category": "视频画面",
+      "page": 1,
+      "question": "片子开头，天空里除了月亮还画着什么发亮的小点？",
+      "expected": "星",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 18734.9,
+      "response_headers_ms": 18733.6,
+      "correct": false,
+      "evidence_hit": false,
+      "answer": "这部分请和大人一起讨论吧。",
+      "transcript": "片子开头，天空里除了月亮还画着什么发亮的小点？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 18694,
+        "llm_ms": 15068,
+        "retrieve_ms": 1,
+        "review_ms": 3625,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q21",
+      "category": "视频画面",
+      "page": 1,
+      "question": "片子开头，天空里除了月亮还画着什么发亮的小点？",
+      "expected": "星",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 26153.7,
+      "response_headers_ms": 26151.5,
+      "correct": false,
+      "evidence_hit": false,
+      "answer": "这部分请和大人一起讨论吧。",
+      "transcript": "片子开头，天空里除了月亮，还画着什么发亮的小点。",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 387,
+        "first_audio_ms": 26119,
+        "llm_ms": 20114,
+        "retrieve_ms": 1,
+        "review_ms": 5617,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q22",
+      "category": "视频画面",
+      "page": 1,
+      "question": "片子开头，画面左边是什么植物？",
+      "expected": "树",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 7503.8,
+      "response_headers_ms": 7502.5,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "左边是一棵大树。",
+      "transcript": "片子开头，画面左边是什么植物？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "夜晚的草地，天上有圆月和星星，左边有一棵大树，小兔子朵朵站在草地上仰头看月亮。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 7466,
+        "llm_ms": 6553,
+        "retrieve_ms": 1,
+        "review_ms": 912,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q22",
+      "category": "视频画面",
+      "page": 1,
+      "question": "片子开头，画面左边是什么植物？",
+      "expected": "树",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 11904.3,
+      "response_headers_ms": 11902.1,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "左边有一棵大树，树冠圆圆的像一把大伞。",
+      "transcript": "片子开头画面左展示什么植物？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "大树：一棵高高的大树，圆圆的树冠像一把大伞。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 327,
+        "first_audio_ms": 11876,
+        "llm_ms": 10644,
+        "retrieve_ms": 1,
+        "review_ms": 904,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q23",
+      "category": "视频画面",
+      "page": 1,
+      "question": "朵朵脖子上的围巾在视频里是什么颜色？",
+      "expected": "蓝",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "text",
+      "response_ms": 12613.8,
+      "response_headers_ms": 12612.6,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "朵朵脖子上的围巾是蓝色的。",
+      "transcript": "朵朵脖子上的围巾在视频里是什么颜色？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "围巾：朵朵的蓝色围巾，围在脖子上很暖和。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 12571,
+        "llm_ms": 11643,
+        "retrieve_ms": 2,
+        "review_ms": 926,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q23",
+      "category": "视频画面",
+      "page": 1,
+      "question": "朵朵脖子上的围巾在视频里是什么颜色？",
+      "expected": "蓝",
+      "evidence_pages": [
+        1
+      ],
+      "mode": "audio",
+      "response_ms": 8739.2,
+      "response_headers_ms": 8737.3,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "朵朵脖子上的围巾是蓝色的。",
+      "transcript": "朵朵脖子上的围巾在视频里是什么颜色？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_001.png",
+          "page_no": 1,
+          "quote": "围巾：朵朵的蓝色围巾，围在脖子上很暖和。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 314,
+        "first_audio_ms": 8699,
+        "llm_ms": 8112,
+        "retrieve_ms": 1,
+        "review_ms": 272,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q24",
+      "category": "视频画面",
+      "page": 2,
+      "question": "河边画面中，乌龟爷爷站在哪一岸？",
+      "expected": "右",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 10182.2,
+      "response_headers_ms": 10180.9,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "乌龟爷爷在右岸。",
+      "transcript": "河边画面中，乌龟爷爷站在哪一岸？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "小河边，河水里映着月亮的倒影，朵朵站在左岸看着水面，乌龟爷爷在右岸。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 10144,
+        "llm_ms": 9170,
+        "retrieve_ms": 1,
+        "review_ms": 973,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q24",
+      "category": "视频画面",
+      "page": 2,
+      "question": "河边画面中，乌龟爷爷站在哪一岸？",
+      "expected": "右",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 7155.8,
+      "response_headers_ms": 7153.6,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "乌龟爷爷在右岸。",
+      "transcript": "河边画面中，乌龟爷爷站在哪一岸？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "小河边，河水里映着月亮的倒影，朵朵站在左岸看着水面，乌龟爷爷在右岸。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 310,
+        "first_audio_ms": 7128,
+        "llm_ms": 6485,
+        "retrieve_ms": 1,
+        "review_ms": 332,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q25",
+      "category": "视频画面",
+      "page": 2,
+      "question": "画面里河边细长的植物叫什么？",
+      "expected": "芦苇",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "text",
+      "response_ms": 13054.9,
+      "response_headers_ms": 13053.8,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "画面里河边细长的植物叫芦苇，原文说：长在水边的芦苇，细细长长，风一吹就会沙沙响。",
+      "transcript": "画面里河边细长的植物叫什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "芦苇：长在水边的芦苇，细细长长，风一吹就会沙沙响。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 13019,
+        "llm_ms": 11852,
+        "retrieve_ms": 1,
+        "review_ms": 1166,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q25",
+      "category": "视频画面",
+      "page": 2,
+      "question": "画面里河边细长的植物叫什么？",
+      "expected": "芦苇",
+      "evidence_pages": [
+        2
+      ],
+      "mode": "audio",
+      "response_ms": 9188.6,
+      "response_headers_ms": 9186.6,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "画面里河边细长的植物叫芦苇。",
+      "transcript": "画面里河边细长的植物叫什么？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_002.png",
+          "page_no": 2,
+          "quote": "芦苇：长在水边的芦苇，细细长长，风一吹就会沙沙响。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 284,
+        "first_audio_ms": 9141,
+        "llm_ms": 7968,
+        "retrieve_ms": 1,
+        "review_ms": 888,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q26",
+      "category": "视频画面",
+      "page": 3,
+      "question": "结尾山坡下画了什么建筑？",
+      "expected": "房子|小屋",
+      "evidence_pages": [
+        3
+      ],
+      "mode": "text",
+      "response_ms": 9300.5,
+      "response_headers_ms": 9299.0,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "山坡下有一座亮着灯的小房子。",
+      "transcript": "结尾山坡下画了什么建筑？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "山坡上，朵朵和乌龟爷爷并排坐着看天上的大月亮，山坡下有一座亮着灯的小房子。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 9264,
+        "llm_ms": 8317,
+        "retrieve_ms": 1,
+        "review_ms": 946,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q26",
+      "category": "视频画面",
+      "page": 3,
+      "question": "结尾山坡下画了什么建筑？",
+      "expected": "房子|小屋",
+      "evidence_pages": [
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 8239.6,
+      "response_headers_ms": 8237.2,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "山坡下有一座亮着灯的小房子。",
+      "transcript": "结尾山坡下画了什么建筑？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "山坡上，朵朵和乌龟爷爷并排坐着看天上的大月亮，山坡下有一座亮着灯的小房子。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 278,
+        "first_audio_ms": 8190,
+        "llm_ms": 7651,
+        "retrieve_ms": 1,
+        "review_ms": 260,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q27",
+      "category": "视频画面",
+      "page": 3,
+      "question": "结尾小房子的屋顶是什么颜色？",
+      "expected": "红",
+      "evidence_pages": [
+        3
+      ],
+      "mode": "text",
+      "response_ms": 8447.2,
+      "response_headers_ms": 8445.5,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "小房子的屋顶是红色的。",
+      "transcript": "结尾小房子的屋顶是什么颜色？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "小房子：山坡下的小房子，屋顶是红色的。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 8410,
+        "llm_ms": 7555,
+        "retrieve_ms": 2,
+        "review_ms": 853,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q27",
+      "category": "视频画面",
+      "page": 3,
+      "question": "结尾小房子的屋顶是什么颜色？",
+      "expected": "红",
+      "evidence_pages": [
+        3
+      ],
+      "mode": "audio",
+      "response_ms": 7488.2,
+      "response_headers_ms": 7486.3,
+      "correct": true,
+      "evidence_hit": false,
+      "answer": "小房子的屋顶是红色的。",
+      "transcript": "结尾小房子的屋顶是什么颜色？",
+      "evidence": [
+        {
+          "page_image_url": "/api/v1/media/demo_book/pages/page_003.png",
+          "page_no": 3,
+          "quote": "小房子：山坡下的小房子，屋顶是红色的。",
+          "type": "page"
+        }
+      ],
+      "stages": {
+        "asr_ms": 480,
+        "first_audio_ms": 7438,
+        "llm_ms": 6721,
+        "retrieve_ms": 2,
+        "review_ms": 235,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q28",
+      "category": "书外拒答",
+      "page": 1,
+      "question": "恐龙吃什么？",
+      "expected": "",
+      "evidence_pages": [],
+      "mode": "text",
+      "response_ms": 8671.5,
+      "response_headers_ms": 8670.3,
+      "correct": true,
+      "evidence_hit": null,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "恐龙吃什么？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 8659,
+        "llm_ms": 8658,
+        "retrieve_ms": 1,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q28",
+      "category": "书外拒答",
+      "page": 1,
+      "question": "恐龙吃什么？",
+      "expected": "",
+      "evidence_pages": [],
+      "mode": "audio",
+      "response_ms": 5562.3,
+      "response_headers_ms": 5558.8,
+      "correct": true,
+      "evidence_hit": null,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "恐龙吃什么？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 449,
+        "first_audio_ms": 5487,
+        "llm_ms": 5036,
+        "retrieve_ms": 2,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q29",
+      "category": "书外拒答",
+      "page": 1,
+      "question": "朵朵的学校叫什么名字？",
+      "expected": "",
+      "evidence_pages": [],
+      "mode": "text",
+      "response_ms": 7398.0,
+      "response_headers_ms": 7396.8,
+      "correct": true,
+      "evidence_hit": null,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "朵朵的学校叫什么名字？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 7384,
+        "llm_ms": 7383,
+        "retrieve_ms": 1,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q29",
+      "category": "书外拒答",
+      "page": 1,
+      "question": "朵朵的学校叫什么名字？",
+      "expected": "",
+      "evidence_pages": [],
+      "mode": "audio",
+      "response_ms": 4616.2,
+      "response_headers_ms": 4614.4,
+      "correct": true,
+      "evidence_hit": null,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "朵朵的学校叫什么名字？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 278,
+        "first_audio_ms": 4589,
+        "llm_ms": 4310,
+        "retrieve_ms": 1,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q30",
+      "category": "书外拒答",
+      "page": 1,
+      "question": "乌龟爷爷的电话是多少？",
+      "expected": "",
+      "evidence_pages": [],
+      "mode": "text",
+      "response_ms": 6678.3,
+      "response_headers_ms": 6677.0,
+      "correct": true,
+      "evidence_hit": null,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "乌龟爷爷的电话是多少？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 0,
+        "first_audio_ms": 6662,
+        "llm_ms": 6660,
+        "retrieve_ms": 2,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    },
+    {
+      "id": "q30",
+      "category": "书外拒答",
+      "page": 1,
+      "question": "乌龟爷爷的电话是多少？",
+      "expected": "",
+      "evidence_pages": [],
+      "mode": "audio",
+      "response_ms": 4753.6,
+      "response_headers_ms": 4750.5,
+      "correct": true,
+      "evidence_hit": null,
+      "answer": "这本书里没有讲到哦。",
+      "transcript": "乌龟爷爷的电话是多少？",
+      "evidence": [],
+      "stages": {
+        "asr_ms": 397,
+        "first_audio_ms": 4713,
+        "llm_ms": 4314,
+        "retrieve_ms": 2,
+        "review_ms": 0,
+        "tts_ms": 0
+      }
+    }
+  ]
+}

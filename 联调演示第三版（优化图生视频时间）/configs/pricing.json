@@ -1,0 +1,30 @@
+{
+  "_说明": "单价和预算。候选单价需与实际账号、模型档位及服务商价目表核对；null 表示未知，台账只记用量、金额记 null。预算为 null 表示不限制；total.max_amount_total 是所有服务累计金额的总闸。",
+  "currency": "CNY",
+  "services": {
+    "i2v": {
+      "wan2.2-i2v-flash": {"per_second": 0.1},
+      "wan2.5-i2v-preview": {"per_second": 0.1},
+      "*": {"per_second": null}
+    },
+    "llm": {
+      "*": {"per_1k_input_tokens": null, "per_1k_output_tokens": null}
+    },
+    "tts": {
+      "cosyvoice-v3-plus": {"per_1k_chars": 0.2},
+      "cosyvoice-v3-flash": {"per_1k_chars": 0.1},
+      "*": {"per_1k_chars": null}
+    },
+    "vlm": {},
+    "embedding": {},
+    "voice_enrollment": {}
+  },
+  "budgets": {
+    "i2v": {"max_calls_per_day": 30, "max_amount_total": 20.0},
+    "llm": {"max_calls_per_day": 500, "max_amount_total": null},
+    "tts": {"max_calls_per_day": 300, "max_amount_total": 5.0},
+    "vlm": {"max_calls_per_day": 80, "max_amount_total": null},
+    "voice_enrollment": {"max_calls_per_day": 3},
+    "total": {"max_amount_total": 25.0}
+  }
+}

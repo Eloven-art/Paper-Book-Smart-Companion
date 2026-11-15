@@ -1,0 +1,15 @@
+# 仅“重新导出 SenseVoice ONNX”时需要；日常运行和部署不需要这些包。
+# 注意：funasr 的依赖会固定 numpy<=1.26.4，而本项目运行环境用 numpy 2.x + opencv 5。
+# 因此请单独建一个临时虚拟环境做导出，不要装进运行环境的 .venv。
+#
+#   python -m venv .venv-export
+#   .venv-export\Scripts\pip install -r requirements-export.txt
+#
+# 导出流程见 third_party/SenseVoice/SOURCE.md；导出的 model_quant.onnx 放到 data/models/sensevoice/。
+torch>=2.12.1
+torchaudio>=2.11.0
+funasr>=1.3.26
+modelscope
+huggingface_hub
+onnx
+onnxruntime

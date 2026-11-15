@@ -1,0 +1,250 @@
+{
+  "book": "demo_book",
+  "page": 1,
+  "index": {
+    "sha256": "5ac28c51636d0e85d2116198407b5aa361eb49e976eba6873288ed139a4837a6",
+    "step": 2.0,
+    "prompt_version": "video_frame_v1",
+    "prompt_sha256": "ca82b9891921cf8a5c8746cb70073369ed9825715febcbc46203623a5bacd658",
+    "embedding_model": null,
+    "complete": false
+  },
+  "frames": [
+    {
+      "time": 0.0,
+      "frame_size": {
+        "width": 1280,
+        "height": 720
+      },
+      "objects": [
+        {
+          "object_id": "p1_o1",
+          "name": "大树",
+          "bbox": [
+            32,
+            214,
+            261,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o2",
+          "name": "小兔子",
+          "bbox": [
+            446,
+            359,
+            508,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o3",
+          "name": "月亮",
+          "bbox": [
+            690,
+            64,
+            842,
+            342
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o4",
+          "name": "星星",
+          "bbox": [
+            99,
+            115,
+            126,
+            142
+          ],
+          "explanation": ""
+        }
+      ],
+      "scene_summary": "夜晚的草地上，小兔子站在大树和月亮之间，周围有星星。",
+      "method": "vlm",
+      "prompt_version": "video_frame_v1"
+    },
+    {
+      "time": 2.0,
+      "frame_size": {
+        "width": 1280,
+        "height": 720
+      },
+      "objects": [
+        {
+          "object_id": "p1_o1",
+          "name": "大树",
+          "bbox": [
+            22,
+            205,
+            258,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o2",
+          "name": "小兔子",
+          "bbox": [
+            448,
+            355,
+            508,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o3",
+          "name": "月亮",
+          "bbox": [
+            698,
+            60,
+            848,
+            338
+          ],
+          "explanation": ""
+        }
+      ],
+      "scene_summary": "夜晚的草地上，有一只戴着蓝色围巾的白色小兔子，左边是一棵大树，天空中挂着圆圆的月亮和星星。",
+      "method": "vlm",
+      "prompt_version": "video_frame_v1"
+    },
+    {
+      "time": 4.0,
+      "frame_size": {
+        "width": 1280,
+        "height": 720
+      },
+      "objects": [
+        {
+          "object_id": "p1_o1",
+          "name": "大树",
+          "bbox": [
+            16,
+            180,
+            252,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o2",
+          "name": "小兔子",
+          "bbox": [
+            446,
+            352,
+            508,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o3",
+          "name": "月亮",
+          "bbox": [
+            700,
+            50,
+            858,
+            336
+          ],
+          "explanation": ""
+        }
+      ],
+      "scene_summary": "夜晚的草地上，小兔子站在树和月亮之间",
+      "method": "vlm",
+      "prompt_version": "video_frame_v1"
+    },
+    {
+      "time": 6.0,
+      "frame_size": {
+        "width": 1280,
+        "height": 720
+      },
+      "objects": [
+        {
+          "object_id": "p1_o1",
+          "name": "大树",
+          "bbox": [
+            15,
+            183,
+            249,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o2",
+          "name": "小兔子",
+          "bbox": [
+            434,
+            349,
+            508,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o3",
+          "name": "月亮",
+          "bbox": [
+            702,
+            42,
+            865,
+            336
+          ],
+          "explanation": ""
+        }
+      ],
+      "scene_summary": "夜晚的草地上，小兔子站在中间，左边有一棵树，右边有月亮，天空中散布着星星。",
+      "method": "vlm",
+      "prompt_version": "video_frame_v1"
+    },
+    {
+      "time": 8.0,
+      "frame_size": {
+        "width": 1280,
+        "height": 720
+      },
+      "objects": [
+        {
+          "object_id": "p1_o1",
+          "name": "大树",
+          "bbox": [
+            15,
+            180,
+            249,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o2",
+          "name": "兔子",
+          "bbox": [
+            438,
+            349,
+            508,
+            720
+          ],
+          "explanation": ""
+        },
+        {
+          "object_id": "p1_o3",
+          "name": "月亮",
+          "bbox": [
+            705,
+            42,
+            866,
+            336
+          ],
+          "explanation": ""
+        }
+      ],
+      "scene_summary": "夜晚的草地上有一棵树、一只戴蓝色围巾的兔子，以及天上的月亮和星星",
+      "method": "vlm",
+      "prompt_version": "video_frame_v1"
+    }
+  ]
+}
