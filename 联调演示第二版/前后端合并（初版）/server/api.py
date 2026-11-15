@@ -103,6 +103,60 @@ def get_run(run_id: str):
 
 
 # ---------------------------------------------------------------- 绘本
+@bp.post("/pdf-imports")
+def start_pdf_import():
+    imports = _ext()["pdf_imports"]
+    limit = _ext()["settings"].pdf_max_mb
+    if (request.content_length or 0) > (limit + 1) * 1024**2:
+        return ok(imports.reject(f"PDF 文件超过 {limit} MiB"), 202)
+    from werkzeug.exceptions import BadRequest, RequestEntityTooLarge
+    try:
+        uploads = request.files.getlist("pdf")
+    except (BadRequest, RequestEntityTooLarge):
+        return ok(imports.reject("文件未完整接收或超过上传上限"), 202)
+    if len(uploads) != 1 or not uploads[0].filename:
+        raise ValidationError("请选择一个 PDF 文件")
+    return ok(imports.start(uploads[0], (request.form.get("title") or "").strip()), 202)
+
+
+@bp.get("/pdf-imports")
+def active_pdf_imports():
+    return ok({"items": _ext()["pdf_imports"].active()})
+
+
+@bp.get("/pdf-imports/<item_id>")
+def get_pdf_import(item_id):
+    return ok(_ext()["pdf_imports"].get(item_id))
+
+
+@bp.post("/pdf-imports/<item_id>/decision")
+def decide_pdf_import(item_id):
+    body = _body()
+    page = check_page_no(body["page"]) if "page" in body else None
+    return ok(_ext()["pdf_imports"].decide(item_id, body.get("action"), page, request.files.get("replacement")))
+
+
+@bp.get("/pdf-trash")
+def list_pdf_trash():
+    return ok({"items": _ext()["pdf_imports"].trash()})
+
+
+@bp.get("/pdf-trash/<item_id>/original")
+def download_pdf_trash(item_id):
+    source, name = _ext()["pdf_imports"].original(item_id)
+    response = send_file(source, mimetype="application/octet-stream", as_attachment=True,
+                         download_name=name, max_age=0)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Cache-Control"] = "no-store"
+    return response
+
+
+@bp.delete("/pdf-trash/<item_id>")
+def delete_pdf_trash(item_id):
+    _ext()["pdf_imports"].delete(item_id)
+    return ok({"deleted": True})
+
+
 @bp.get("/books")
 def list_books():
     store = _store()

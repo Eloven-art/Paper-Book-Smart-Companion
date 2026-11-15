@@ -1,0 +1,30 @@
+{
+  "run_id": "video_book-20261111T092923-d3f03c",
+  "kind": "video_book",
+  "parent_run_id": null,
+  "status": "error",
+  "started_at": "2026-11-11T09:29:23.877+08:00",
+  "finished_at": "2026-11-11T09:29:29.568+08:00",
+  "elapsed_ms": 5691,
+  "code_version": "326ebd2",
+  "input": {
+    "book_id": "demo_broken",
+    "pages": [
+      1,
+      2,
+      3
+    ],
+    "force": false
+  },
+  "prompt": null,
+  "model": null,
+  "outputs": [],
+  "cost": null,
+  "notes": {},
+  "error": {
+    "type": "ValidationError",
+    "code": "PAGE_IMAGE_MISSING",
+    "message": "第 2 页的页面图片不存在：pages/page_missing.png",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\学习文件夹\\比赛资料\\人工智能+\\agents\\video_agent.py\", line 304, in generate_book_video\n    clips.append(self.generate_page_clip(book_id, page_no, force, run.run_id,\n                 ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                                         notify=lambda m, b=base: report(b, m)))\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\学习文件夹\\比赛资料\\人工智能+\\agents\\video_agent.py\", line 220, in generate_page_clip\n    raise ValidationError(f\"第 {page_no} 页的页面图片不存在：{page['page_image']}\",\n                          code=\"PAGE_IMAGE_MISSING\", http_status=404)\nserver.errors.ValidationError: 第 2 页的页面图片不存在：pages/page_missing.png\n"
+  }
+}

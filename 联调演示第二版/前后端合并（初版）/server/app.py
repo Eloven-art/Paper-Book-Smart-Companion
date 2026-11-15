@@ -23,6 +23,7 @@ from . import api, mock_api, voice_bridge
 from .envelope import begin_request, fail
 from .errors import AppError
 from .task_queue import TaskManager
+from .pdf_import import PdfImports
 
 log = logging.getLogger("pbsc.app")
 VERSION = "0.1.0"
@@ -40,7 +41,7 @@ def create_app(settings: Optional[Settings] = None) -> Flask:
     app = Flask(__name__, static_folder=None)
     app.json.ensure_ascii = False
     # 整个请求体的上限：单文件上限 × 页数上限，另留 1 MB 给表单字段
-    app.config["MAX_CONTENT_LENGTH"] = int(settings.max_upload_mb * 1024 * 1024 * settings.max_pages_per_upload) + (1 << 20)
+    app.config["MAX_CONTENT_LENGTH"] = int(max(settings.pdf_max_mb, settings.max_upload_mb * settings.max_pages_per_upload) * 1024**2) + (1 << 20)
 
     pipeline = build_pipeline(settings)
     sample = settings.samples_dir / "demo_book"
@@ -48,7 +49,8 @@ def create_app(settings: Optional[Settings] = None) -> Flask:
         # 首次启动时放入自制示例绘本，打开页面就有书可读（真实链路会重新生成旁白和视频）
         pipeline.store.install_sample(sample)
     tasks = TaskManager(workers=settings.task_workers, store_dir=settings.tasks_dir)
-    app.extensions["pbsc"] = {"settings": settings, "pipeline": pipeline, "tasks": tasks}
+    app.extensions["pbsc"] = {"settings": settings, "pipeline": pipeline, "tasks": tasks,
+                              "pdf_imports": PdfImports(settings, pipeline, tasks)}
 
     app.register_blueprint(api.bp)
     app.register_blueprint(mock_api.bp)

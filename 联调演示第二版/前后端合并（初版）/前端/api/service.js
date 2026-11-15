@@ -69,7 +69,7 @@ function mapBook(meta, pages) {
       video: p.video_clip_url, videoFallback: !!p.video_meta?.is_fallback,
       audio: p.narration_audio_url, audioPlaceholder: !!p.narration_audio?.is_placeholder,
       timeRange: p.time_range, objectCount: (p.objects || []).length,
-      safety: p.safety_check?.status || null,
+      safety: p.safety_check?.status || null, importSkipped: !!p.import_skipped,
     })),
   };
 }
@@ -87,6 +87,34 @@ export const books = {
     for (const f of files) form.append('pages', f, f.name);
     return request('/books', { body: form, timeout: 120000 });
   },
+};
+
+export const pdfImports = {
+  start(file, title) {
+    const body = new FormData();
+    body.append('pdf', file, file.name);
+    body.append('title', title);
+    return request('/pdf-imports', { body, timeout: 300000 });
+  },
+  active: () => request('/pdf-imports').then(r => r.items),
+  async wait(item, signal) {
+    while (item.status === 'running' || item.status === 'cancelling') {
+      await sleep(800, signal);
+      item = await request('/pdf-imports/' + encodeURIComponent(item.id), { signal });
+    }
+    return item;
+  },
+  decide(item, action, replacement) {
+    const path = '/pdf-imports/' + encodeURIComponent(item.id) + '/decision';
+    if (!replacement) return request(path, { body: { action, page: item.page } });
+    const body = new FormData();
+    body.append('action', action);
+    body.append('page', String(item.page));
+    body.append('replacement', replacement, replacement.name);
+    return request(path, { body, timeout: 120000 });
+  },
+  trash: () => request('/pdf-trash').then(r => r.items),
+  remove: id => request('/pdf-trash/' + encodeURIComponent(id), { method: 'DELETE' }),
 };
 
 // ---------------------------------------------------------------- 任务

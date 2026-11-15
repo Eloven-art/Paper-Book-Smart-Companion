@@ -1,7 +1,7 @@
 import { createReadingTools } from './ui/reading-tools.js';
 import { cloneVoice } from './api/voice.js';
 import { openVoicePanel } from './ui/voice-panel.js';
-import { config, books, story, localDemo, bookshelf, narration, conversation, touch, challenge, health, interaction, readingProgress } from './api/service.js';
+import { config, books, pdfImports, story, localDemo, bookshelf, narration, conversation, touch, challenge, health, interaction, readingProgress } from './api/service.js';
 const $ = s => document.querySelector(s), dialog = $('#dialog'), content = $('#content');
 const state = { book: null, page: 0, task: null, status: 'idle', history: [], lastAnimal: null, cleanup: null, cloned: null, timer: null, quiz: 0, score: 0, answers: [], target: null, sessionId: 'session-' + Math.random().toString(36).slice(2, 10), backend: null };
 const modeLabel = () => config.mode === 'preview' ? '前端试用 · 尚未接 API' : config.mode === 'mock' ? '假接口联调' : state.backend === false ? '后端未连接' : '已连接后端';
@@ -38,7 +38,7 @@ async function rabbit(options = {}) {
   const list = el('div'); list.append(el('p', '正在读取书架……', 'muted')); content.append(list);
   try {
     const items = await books.list(); state.backend = true; list.replaceChildren();
-    if (!items.length) list.append(el('p', '后端还没有绘本，可以在下面上传页面图片。', 'muted'));
+    if (!items.length) list.append(el('p', '书架还没有绘本，可以在下面上传。', 'muted'));
     for (const b of items) {
       const c = button('', async () => { if(managing){prepare(b);return;} try{const book=await books.load(b.book_id);close();openBook(book);}catch(e){toast(errorText(e));} }, 'choice book-choice');
       const progress=readingProgress.get(b.book_id);
@@ -54,15 +54,31 @@ async function rabbit(options = {}) {
   if(!managing){actions(button('大人准备绘本',()=>rabbit({manage:true})));return;}
   if(config.mode==='preview')content.append(el('p','支持整本 PDF，或一次选齐全部页面图片。保存在这个浏览器的书架中，刷新后仍可继续阅读。图片原文识别和物体分割仍等待 API。','muted'));
   if (config.mode === 'mock') { content.append(el('p', '当前是假接口联调模式（地址带 ?mock=1），数据是固定示例，不是生成结果。', 'muted')); }
+  if (config.mode === 'real') {
+    actions(button('垃圾桶', showPdfTrash));
+    const pending = el('div', '', 'actions'); content.append(pending);
+    pdfImports.active().then(items => items.forEach(item =>
+      pending.append(button('继续上传：' + item.name, () => showPdfUpload(item)))
+    )).catch(e => pending.append(el('p', errorText(e), 'error')));
+  }
   const form = el('div', '', 'upload');
   const title = document.createElement('input'); title.placeholder = '书名（可不填）'; title.maxLength = 60;
-  const label = el('label', config.mode==='preview'?'选择一本 PDF 或全部页面图片（图片按选择顺序）':'上传全部绘本页面图片（按选择顺序编页码）', 'field'), input = document.createElement('input');
-  input.type = 'file'; input.accept = config.mode==='preview'?'application/pdf,image/png,image/jpeg,image/webp':'image/png,image/jpeg,image/webp'; input.multiple = true; label.append(input);
+  const label = el('label', config.mode==='mock'?'上传全部绘本页面图片（按选择顺序编页码）':'选择一本 PDF 或全部页面图片（图片按选择顺序）', 'field'), input = document.createElement('input');
+  input.type = 'file'; input.accept = config.mode==='mock'?'image/png,image/jpeg,image/webp':'application/pdf,image/png,image/jpeg,image/webp'; input.multiple = true; label.append(input);
   const info = el('p', '', 'error'); info.setAttribute('role', 'alert');
   const send = button('保存到书架', async () => {
     const fs = [...input.files];
     if (!fs.length) { info.textContent = '请先选择整本 PDF 或页面图片。'; return; }
     if (fs.some(f => f.type!=='application/pdf' && !/\.pdf$/i.test(f.name) && f.size > 20 * 1024 * 1024)) { info.textContent = '单张图片请不超过 20 MB。'; return; }
+    const pdfs = fs.filter(f => f.type === 'application/pdf' || /\.pdf$/i.test(f.name));
+    if (config.mode === 'real' && pdfs.length) {
+      if (pdfs.length !== 1 || fs.length !== 1) { info.textContent = '一次请选择一本 PDF；图片可单独批量上传。'; return; }
+      send.disabled = true; info.textContent = '正在上传';
+      try { const item = await pdfImports.start(pdfs[0], title.value.trim()); if (dialog.open && content.contains(form)) showPdfUpload(item); }
+      catch (e) { info.textContent = errorText(e); }
+      finally { send.disabled = false; }
+      return;
+    }
     send.disabled = true; info.textContent = '正在整理整本绘本……';
     const showProgress=e=>info.textContent=e.detail.message;window.addEventListener('pbsc-import-progress',showProgress);
     try { const r=await books.upload(fs,title.value.trim());toast(r.task_id?`《${r.title}》已放入书架，共 ${r.page_count} 页；文字识别已开始。`:`《${r.title}》已放入书架，共 ${r.page_count} 页。`);if(config.mode==='preview'){const book=await books.load(r.book_id);close();openBook(book);}else rabbit({manage:true}); }
@@ -71,6 +87,81 @@ async function rabbit(options = {}) {
   });
   form.append(label, title, send, info);
   content.append(el('p', '只能上传组委会授权的绘本或队伍自制的模拟绘本。上传后会用本地 RapidOCR 自动识别文字；人物和画面理解仍需后续模块。', 'muted'), form);
+}
+
+async function showPdfUpload(item) {
+  if (item.status === 'completed') {
+    try { const book = await books.load(item.book_id); close(); openBook(book); }
+    catch (e) { toast(errorText(e)); rabbit({manage:true}); }
+    return;
+  }
+  if (item.status === 'trash') {
+    show('rabbit', '上传结束', item.reason);
+    actions(button('查看垃圾桶', showPdfTrash), button('返回', () => rabbit({manage:true})));
+    return;
+  }
+  const paused = item.status === 'paused';
+  show('rabbit', paused ? '第 ' + item.page + ' 页上传失败' : '正在上传', paused ? item.reason : null);
+  const controller = new AbortController();
+  state.cleanup = () => controller.abort();
+  const error = el('p', '', 'error'); error.setAttribute('role', 'alert'); content.append(error);
+  let replacement;
+  if (paused) {
+    const label = el('label', '替换当前失败页（可选）', 'field');
+    replacement = document.createElement('input');
+    replacement.type = 'file'; replacement.accept = 'image/png,image/jpeg,image/webp';
+    label.append(replacement); content.append(label);
+  }
+  let submitting = false;
+  const decide = async action => {
+    if (submitting || controller.signal.aborted) return;
+    submitting = true;
+    try {
+      const next = await pdfImports.decide(item, action, action === 'retry' ? replacement?.files[0] : undefined);
+      if (!controller.signal.aborted) showPdfUpload(next);
+    } catch (e) { error.textContent = errorText(e); }
+    finally { submitting = false; }
+  };
+  const cancel = button('取消上传', () => decide('cancel'));
+  cancel.disabled = item.status === 'cancelling';
+  if (paused) actions(button('跳过', () => decide('skip')), button('重传', () => decide('retry'), 'primary'), cancel);
+  else {
+    actions(cancel);
+    try {
+      const next = await pdfImports.wait(item, controller.signal);
+      if (!controller.signal.aborted && !submitting) showPdfUpload(next);
+    } catch (e) {
+      if (!controller.signal.aborted) {
+        error.textContent = errorText(e);
+        actions(button('重新查看', () => showPdfUpload(item)));
+      }
+    }
+  }
+}
+
+async function showPdfTrash() {
+  show('rabbit', '垃圾桶', '失败记录和可保留的原文件保存 7 天。');
+  const list = el('div'); content.append(list);
+  actions(button('返回上传', () => rabbit({manage:true})));
+  try {
+    const items = await pdfImports.trash();
+    if (!items.length) list.append(el('p', '垃圾桶为空。'));
+    for (const item of items) {
+      const row = el('div', '', 'status-line');
+      row.append(el('strong', item.name), el('p', item.reason),
+        el('p', '保留至 ' + new Date(item.expires_at * 1000).toLocaleString(), 'muted'));
+      if (item.has_source) {
+        const link = el('a', '下载原文件');
+        link.href = '/api/v1/pdf-trash/' + encodeURIComponent(item.id) + '/original';
+        row.append(link, document.createTextNode(' '));
+      }
+      row.append(button('立即删除', async () => {
+        try { await pdfImports.remove(item.id); row.remove(); }
+        catch (e) { toast(errorText(e)); }
+      }));
+      list.append(row);
+    }
+  } catch (e) { list.append(el('p', errorText(e), 'error')); }
 }
 
 function prepare(summary) {
@@ -212,9 +303,9 @@ function renderPage(options={}){
   const book=state.book,p=book.pages[state.page],backendBook=book.source==='backend';state.selectedObject=null;
   $('#reading-title').textContent=book.title;$('#page-count').textContent=`第 ${state.page+1} 页 / ${book.pages.length} 页`;$('#reader-position').textContent=`${state.page+1} / ${book.pages.length}`;
   $('#narration-details').hidden=!p.narrationText||p.narrationText===p.text;$('#narration-text').textContent=p.narrationText||'';$('#page-title').textContent=p.title;
-  $('#page-text').textContent=p.text||'这页的文字就在画面里。自动文字识别尚未接入。';$('#prev').disabled=state.page===0;$('#next').disabled=state.page===book.pages.length-1;
+  $('#page-text').textContent=p.importSkipped ? '此页上传时已跳过。' : p.text||'这页的文字就在画面里。自动文字识别尚未接入。';$('#prev').disabled=state.page===0;$('#next').disabled=state.page===book.pages.length-1;
   $('#reader-label').textContent=modeLabel();
-  const notes=[];if(state.book.reviewPending)notes.push('生成旁白与视频等待人工复核');if(p.audioPlaceholder)notes.push('此示例音轨为占位提示音');if(p.videoFallback)notes.push('此示例视频采用本地推近效果');if(!p.objectCount)notes.push('这一页尚无物体标注');if(p.needsReview)notes.push('内容待核对');$('#page-note').textContent=notes.join('；');
+  const notes=[];if(p.importSkipped)notes.push('此页上传时已跳过。');if(state.book.reviewPending)notes.push('生成旁白与视频等待人工复核');if(p.audioPlaceholder)notes.push('此示例音轨为占位提示音');if(p.videoFallback)notes.push('此示例视频采用本地推近效果');if(!p.objectCount)notes.push('这一页尚无物体标注');if(p.needsReview)notes.push('内容待核对');$('#page-note').textContent=notes.join('；');
   const pic=img();pic.classList.toggle('page-image',backendBook);pic.alt=`${book.title} 第 ${state.page+1} 页`;$('#identify').hidden=backendBook;
   const epoch=++pageRenderEpoch;
   if(p.image){pic.src=p.image;$('#page-loading').hidden=true;}
@@ -313,7 +404,7 @@ function highlightOriginal(query, pageNo) {
 function renderTextHighlights() {
   const layer = $('#text-highlights'), p = state.book?.pages[state.page];
   layer.replaceChildren(); layer.setAttribute('hidden', ''); if (!p) return;
-  const text = p.text || '', query = state.highlight || '', target = $('#page-text');
+  const text = p.importSkipped ? '此页上传时已跳过。' : p.text || '', query = state.highlight || '', target = $('#page-text');
   if (!text) return;
   target.replaceChildren();
   if (!query) target.textContent = text;
