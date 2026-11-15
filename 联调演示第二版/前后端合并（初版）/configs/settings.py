@@ -140,6 +140,10 @@ class Settings:
     max_upload_mb: float
     max_image_pixels: int
     max_pages_per_upload: int
+    pdf_max_mb: int
+    pdf_max_pages: int
+    pdf_max_edge: int
+    pdf_max_pixels: int
     task_workers: int
     retry_attempts: int
     retry_base_delay: float
@@ -396,6 +400,10 @@ def load_settings(environ: Optional[Mapping[str, str]] = None, use_dotenv: bool 
         max_upload_mb=env.number("PBSC_MAX_UPLOAD_MB", 20.0),
         max_image_pixels=env.integer("PBSC_MAX_IMAGE_PIXELS", 40_000_000),
         max_pages_per_upload=env.integer("PBSC_MAX_PAGES_PER_UPLOAD", 60),
+        pdf_max_mb=max(1, env.integer("PBSC_PDF_MAX_MB", 100)),
+        pdf_max_pages=max(1, env.integer("PBSC_PDF_MAX_PAGES", 150)),
+        pdf_max_edge=max(2, env.integer("PBSC_PDF_MAX_EDGE", 3000)),
+        pdf_max_pixels=max(4, env.integer("PBSC_PDF_MAX_PIXELS", 9000000)),
         task_workers=env.integer("PBSC_TASK_WORKERS", 2),
         retry_attempts=env.integer("PBSC_RETRY_ATTEMPTS", 3),
         retry_base_delay=env.number("PBSC_RETRY_BASE_DELAY", 1.0),
