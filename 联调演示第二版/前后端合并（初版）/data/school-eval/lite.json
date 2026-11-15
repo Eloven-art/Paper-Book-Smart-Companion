@@ -1,0 +1,1772 @@
+﻿{
+    "scope":  "校赛自测·自制绘本·关键词初判，需人工复核",
+    "configuration":  "lite-CPU",
+    "metrics":  {
+                    "text":  {
+                                 "cases":  30,
+                                 "completed":  30,
+                                 "errors":  0,
+                                 "answer_accuracy":  0.16666666666666666,
+                                 "evidence_hit_rate":  0.1111111111111111,
+                                 "response_p95_ms":  12657.6,
+                                 "audio_download_p95_ms":  null
+                             },
+                    "text/原文":  {
+                                    "cases":  13,
+                                    "completed":  13,
+                                    "errors":  0,
+                                    "answer_accuracy":  0.07692307692307693,
+                                    "evidence_hit_rate":  0.15384615384615385,
+                                    "response_p95_ms":  15162.0,
+                                    "audio_download_p95_ms":  null
+                                },
+                    "audio":  {
+                                  "cases":  30,
+                                  "completed":  30,
+                                  "errors":  0,
+                                  "answer_accuracy":  0.16666666666666666,
+                                  "evidence_hit_rate":  0.037037037037037035,
+                                  "response_p95_ms":  15748.0,
+                                  "audio_download_p95_ms":  null
+                              },
+                    "audio/原文":  {
+                                     "cases":  13,
+                                     "completed":  13,
+                                     "errors":  0,
+                                     "answer_accuracy":  0.07692307692307693,
+                                     "evidence_hit_rate":  0.07692307692307693,
+                                     "response_p95_ms":  15748.0,
+                                     "audio_download_p95_ms":  null
+                                 },
+                    "text/跨页":  {
+                                    "cases":  7,
+                                    "completed":  7,
+                                    "errors":  0,
+                                    "answer_accuracy":  0.14285714285714285,
+                                    "evidence_hit_rate":  0.14285714285714285,
+                                    "response_p95_ms":  12657.6,
+                                    "audio_download_p95_ms":  null
+                                },
+                    "audio/跨页":  {
+                                     "cases":  7,
+                                     "completed":  7,
+                                     "errors":  0,
+                                     "answer_accuracy":  0.0,
+                                     "evidence_hit_rate":  0.0,
+                                     "response_p95_ms":  17106.1,
+                                     "audio_download_p95_ms":  null
+                                 },
+                    "text/视频画面":  {
+                                      "cases":  7,
+                                      "completed":  7,
+                                      "errors":  0,
+                                      "answer_accuracy":  0.0,
+                                      "evidence_hit_rate":  0.0,
+                                      "response_p95_ms":  10884.1,
+                                      "audio_download_p95_ms":  null
+                                  },
+                    "audio/视频画面":  {
+                                       "cases":  7,
+                                       "completed":  7,
+                                       "errors":  0,
+                                       "answer_accuracy":  0.14285714285714285,
+                                       "evidence_hit_rate":  0.0,
+                                       "response_p95_ms":  12385.3,
+                                       "audio_download_p95_ms":  null
+                                   },
+                    "text/书外拒答":  {
+                                      "cases":  3,
+                                      "completed":  3,
+                                      "errors":  0,
+                                      "answer_accuracy":  1.0,
+                                      "evidence_hit_rate":  null,
+                                      "response_p95_ms":  8236.0,
+                                      "audio_download_p95_ms":  null
+                                  },
+                    "audio/书外拒答":  {
+                                       "cases":  3,
+                                       "completed":  3,
+                                       "errors":  0,
+                                       "answer_accuracy":  1.0,
+                                       "evidence_hit_rate":  null,
+                                       "response_p95_ms":  7226.9,
+                                       "audio_download_p95_ms":  null
+                                   }
+                },
+    "items":  [
+                  {
+                      "id":  "q01",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "故事的主角叫什么？",
+                      "expected":  "朵朵",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  6456.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "故事的主角叫什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  6440,
+                                     "llm_ms":  5558,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  881,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q01",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "故事的主角叫什么？",
+                      "expected":  "朵朵",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  15748.0,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "故事的主角叫什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  3012,
+                                     "first_audio_ms":  10176,
+                                     "llm_ms":  6482,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  682,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q02",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵是什么动物？",
+                      "expected":  "兔",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  11670.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵是什么动物？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  11661,
+                                     "llm_ms":  10871,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  790,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q02",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵是什么动物？",
+                      "expected":  "兔",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9128.8,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵是什么动物？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  108,
+                                     "first_audio_ms":  9077,
+                                     "llm_ms":  8306,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  662,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q03",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "故事开头是什么时候？",
+                      "expected":  "夜晚|晚上",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  6767.9,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "故事开头是什么时候？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  6760,
+                                     "llm_ms":  6760,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q03",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "故事开头是什么时候？",
+                      "expected":  "夜晚|晚上",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  7721.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "故事开头是什么时候？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  134,
+                                     "first_audio_ms":  7701,
+                                     "llm_ms":  6819,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  747,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q04",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵一开始站在哪里？",
+                      "expected":  "草地",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  9860.9,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵一开始站在哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  9828,
+                                     "llm_ms":  9038,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  790,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q04",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵一开始站在哪里？",
+                      "expected":  "草地",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  11019.6,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵一开始站在哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  123,
+                                     "first_audio_ms":  10992,
+                                     "llm_ms":  10226,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  643,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q05",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵抬头看见了什么？",
+                      "expected":  "月亮",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8061.4,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵抬头看见了什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8052,
+                                     "llm_ms":  7300,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  752,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q05",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵抬头看见了什么？",
+                      "expected":  "月亮",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  12903.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵抬头看见了什么。",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  221,
+                                     "first_audio_ms":  12881,
+                                     "llm_ms":  11942,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  717,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q06",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "他看到的月亮是什么形状？",
+                      "expected":  "圆",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  10398.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "他看到的月亮是什么形状？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  10389,
+                                     "llm_ms":  9581,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  807,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q06",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "他看到的月亮是什么形状？",
+                      "expected":  "圆",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  10302.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "他看到的月亮是什么形状？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  233,
+                                     "first_audio_ms":  10262,
+                                     "llm_ms":  9272,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  757,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q07",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵心里在想什么？",
+                      "expected":  "月亮\u0026哪里",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8183.1,
+                      "correct":  true,
+                      "evidence_hit":  true,
+                      "answer":  "朵朵想月亮住在哪里呢？",
+                      "transcript":  "朵朵心里在想什么？",
+                      "evidence":  [
+                                       {
+                                           "page_image_url":  "/api/v1/media/demo_book/pages/page_001.png",
+                                           "page_no":  1,
+                                           "quote":  "“月亮住在哪里呢？”朵朵想。",
+                                           "type":  "page"
+                                       }
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8155,
+                                     "llm_ms":  7826,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  329,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q07",
+                      "category":  "原文",
+                      "page":  1,
+                      "question":  "朵朵心里在想什么？",
+                      "expected":  "月亮\u0026哪里",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  10285.8,
+                      "correct":  true,
+                      "evidence_hit":  true,
+                      "answer":  "朵朵想月亮在哪里呢？",
+                      "transcript":  "朵朵心里在想什么？",
+                      "evidence":  [
+                                       {
+                                           "page_image_url":  "/api/v1/media/demo_book/pages/page_001.png",
+                                           "page_no":  1,
+                                           "quote":  "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。",
+                                           "type":  "page"
+                                       }
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  210,
+                                     "first_audio_ms":  10262,
+                                     "llm_ms":  9798,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  253,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q08",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "朵朵后来走到哪里？",
+                      "expected":  "河边|小河",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8922.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵后来走到哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8913,
+                                     "llm_ms":  8119,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  794,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q08",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "朵朵后来走到哪里？",
+                      "expected":  "河边|小河",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  7175.7,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "博果后来走到哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  103,
+                                     "first_audio_ms":  7139,
+                                     "llm_ms":  7036,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q09",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "朵朵以为月亮掉到哪了？",
+                      "expected":  "水里|河里|河水",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  11674.0,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵以为月亮掉到哪了？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  11665,
+                                     "llm_ms":  10862,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  803,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q09",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "朵朵以为月亮掉到哪了？",
+                      "expected":  "水里|河里|河水",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  8681.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵以为月亮掉到哪了？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  119,
+                                     "first_audio_ms":  8643,
+                                     "llm_ms":  7848,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  675,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q10",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "谁告诉朵朵那是月亮的影子？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  15162.0,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "谁告诉朵朵那是月亮的影子？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  15153,
+                                     "llm_ms":  14388,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  765,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q10",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "谁告诉朵朵那是月亮的影子？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9627.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "谁告诉朵朵，那是月亮的影子？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  132,
+                                     "first_audio_ms":  9600,
+                                     "llm_ms":  8635,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  832,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q11",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "水里看到的月亮到底是什么？",
+                      "expected":  "倒影|影子",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  10870.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "水里看到的月亮到底是什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  10859,
+                                     "llm_ms":  10116,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  743,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q11",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "水里看到的月亮到底是什么？",
+                      "expected":  "倒影|影子",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9703.9,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "水里看到的月亮到底是什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  136,
+                                     "first_audio_ms":  9645,
+                                     "llm_ms":  8689,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  819,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q12",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "河边遇见了谁？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  9647.2,
+                      "correct":  false,
+                      "evidence_hit":  true,
+                      "answer":  "朵朵",
+                      "transcript":  "河边遇见了谁？",
+                      "evidence":  [
+                                       {
+                                           "page_image_url":  "/api/v1/media/demo_book/pages/page_002.png",
+                                           "page_no":  2,
+                                           "quote":  "朵朵走到小河边，发现月亮掉进了水里。",
+                                           "type":  "page"
+                                       }
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  9635,
+                                     "llm_ms":  9349,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  285,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q12",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "河边遇见了谁？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  5522.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "河边遇见了谁？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  102,
+                                     "first_audio_ms":  5492,
+                                     "llm_ms":  5389,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q13",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "乌龟爷爷说话快还是慢？",
+                      "expected":  "慢",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  10050.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "乌龟爷爷说话快还是慢？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  10041,
+                                     "llm_ms":  9194,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  847,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q13",
+                      "category":  "原文",
+                      "page":  2,
+                      "question":  "乌龟爷爷说话快还是慢？",
+                      "expected":  "慢",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9114.0,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "乌龟爷爷说话快还是慢？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  134,
+                                     "first_audio_ms":  9081,
+                                     "llm_ms":  8416,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  530,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q14",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "最后谁和朵朵一起看月亮？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  9945.8,
+                      "correct":  true,
+                      "evidence_hit":  true,
+                      "answer":  "乌龟爷爷和朵朵一起在山坡上看月亮。",
+                      "transcript":  "最后谁和朵朵一起看月亮？",
+                      "evidence":  [
+                                       {
+                                           "page_image_url":  "/api/v1/media/demo_book/pages/page_003.png",
+                                           "page_no":  3,
+                                           "quote":  "朵朵和乌龟爷爷一起坐在山坡上看月亮。",
+                                           "type":  "page"
+                                       }
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  9937,
+                                     "llm_ms":  9515,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  422,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q14",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "最后谁和朵朵一起看月亮？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9837.7,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "最后，谁和朵朵一起看月亮？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  129,
+                                     "first_audio_ms":  9802,
+                                     "llm_ms":  8924,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  749,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q15",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "它们最后坐在哪里？",
+                      "expected":  "山坡",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  9007.1,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "它们最后坐在哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8979,
+                                     "llm_ms":  8243,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  736,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q15",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "它们最后坐在哪里？",
+                      "expected":  "山坡",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  7585.8,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "他们最后坐在哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  115,
+                                     "first_audio_ms":  7555,
+                                     "llm_ms":  6730,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  710,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q16",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "月亮最后在哪里？",
+                      "expected":  "天上",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  9547.9,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "月亮最后在哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  9539,
+                                     "llm_ms":  8769,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  770,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q16",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "月亮最后在哪里？",
+                      "expected":  "天上",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  10679.5,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "月亮最后在哪里？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  121,
+                                     "first_audio_ms":  10655,
+                                     "llm_ms":  9851,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  682,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q17",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "朵朵和乌龟坐在山坡上做什么？",
+                      "expected":  "看月亮|看着月亮",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  10106.8,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "朵朵和乌龟坐在山坡上做什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  10094,
+                                     "llm_ms":  10094,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q17",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "朵朵和乌龟坐在山坡上做什么？",
+                      "expected":  "看月亮|看着月亮",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9750.8,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵和乌龟坐在山坡上做什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  260,
+                                     "first_audio_ms":  9725,
+                                     "llm_ms":  8585,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  879,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q18",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "请按顺序说朵朵去了哪些地方？",
+                      "expected":  "草地\u0026河\u0026山坡",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  12657.6,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "请按顺序说朵朵去了哪些地方？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  12645,
+                                     "llm_ms":  11824,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  820,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q18",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "请按顺序说朵朵去了哪些地方？",
+                      "expected":  "草地\u0026河\u0026山坡",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  17106.1,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "请按顺序说朵朵去了哪些地方？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  251,
+                                     "first_audio_ms":  17063,
+                                     "llm_ms":  16040,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  772,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q19",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "月亮真的掉下去了吗？",
+                      "expected":  "没有|没掉|一直在天上",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  12053.2,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "月亮真的掉下去了吗？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  12042,
+                                     "llm_ms":  11290,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  751,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q19",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "月亮真的掉下去了吗？",
+                      "expected":  "没有|没掉|一直在天上",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  10017.6,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "月亮真的掉下去了吗？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  177,
+                                     "first_audio_ms":  9991,
+                                     "llm_ms":  9031,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  782,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q20",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "故事里朵朵遇见的伙伴是谁？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8559.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "故事里朵朵遇见的伙伴是谁？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8549,
+                                     "llm_ms":  7704,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  845,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q20",
+                      "category":  "跨页",
+                      "page":  3,
+                      "question":  "故事里朵朵遇见的伙伴是谁？",
+                      "expected":  "乌龟",
+                      "evidence_pages":  [
+                                             1,
+                                             2,
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  10349.1,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "故事里，朵朵遇见的伙伴是谁？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  190,
+                                     "first_audio_ms":  10290,
+                                     "llm_ms":  9294,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  805,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q21",
+                      "category":  "视频画面",
+                      "page":  1,
+                      "question":  "片子开头，天空里除了月亮还画着什么发亮的小点？",
+                      "expected":  "星",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  7777.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "片子开头，天空里除了月亮还画着什么发亮的小点？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  7753,
+                                     "llm_ms":  7753,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q21",
+                      "category":  "视频画面",
+                      "page":  1,
+                      "question":  "片子开头，天空里除了月亮还画着什么发亮的小点？",
+                      "expected":  "星",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  8018.1,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "片子开头，天空里除了月亮，还画着什么发亮的小点。",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  362,
+                                     "first_audio_ms":  7993,
+                                     "llm_ms":  7631,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q22",
+                      "category":  "视频画面",
+                      "page":  1,
+                      "question":  "片子开头，画面左边是什么植物？",
+                      "expected":  "树",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  6468.7,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "片子开头，画面左边是什么植物？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  6460,
+                                     "llm_ms":  5667,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  792,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q22",
+                      "category":  "视频画面",
+                      "page":  1,
+                      "question":  "片子开头，画面左边是什么植物？",
+                      "expected":  "树",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  12385.3,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "片子开头画面左展示什么植物？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  288,
+                                     "first_audio_ms":  12356,
+                                     "llm_ms":  11349,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  719,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q23",
+                      "category":  "视频画面",
+                      "page":  1,
+                      "question":  "朵朵脖子上的围巾在视频里是什么颜色？",
+                      "expected":  "蓝",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  9237.6,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "朵朵脖子上的围巾在视频里是什么颜色？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  9228,
+                                     "llm_ms":  8441,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  786,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q23",
+                      "category":  "视频画面",
+                      "page":  1,
+                      "question":  "朵朵脖子上的围巾在视频里是什么颜色？",
+                      "expected":  "蓝",
+                      "evidence_pages":  [
+                                             1
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9013.9,
+                      "correct":  true,
+                      "evidence_hit":  false,
+                      "answer":  "蓝色围巾",
+                      "transcript":  "朵朵脖子上的围巾在视频里是什么颜色？",
+                      "evidence":  [
+                                       {
+                                           "page_image_url":  "/api/v1/media/demo_book/pages/page_001.png",
+                                           "page_no":  1,
+                                           "quote":  "围巾：朵朵的蓝色围巾，围在脖子上很暖和。",
+                                           "type":  "page"
+                                       }
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  304,
+                                     "first_audio_ms":  8981,
+                                     "llm_ms":  8387,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  290,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q24",
+                      "category":  "视频画面",
+                      "page":  2,
+                      "question":  "河边画面中，乌龟爷爷站在哪一岸？",
+                      "expected":  "右",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  10884.1,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "河边画面中，乌龟爷爷站在哪一岸？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  10848,
+                                     "llm_ms":  9961,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  886,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q24",
+                      "category":  "视频画面",
+                      "page":  2,
+                      "question":  "河边画面中，乌龟爷爷站在哪一岸？",
+                      "expected":  "右",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  10309.1,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "河边画面中，乌龟爷爷站在哪一岸？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  287,
+                                     "first_audio_ms":  10284,
+                                     "llm_ms":  9288,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  708,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q25",
+                      "category":  "视频画面",
+                      "page":  2,
+                      "question":  "画面里河边细长的植物叫什么？",
+                      "expected":  "芦苇",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8082.8,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "画面里河边细长的植物叫什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8071,
+                                     "llm_ms":  7290,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  781,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q25",
+                      "category":  "视频画面",
+                      "page":  2,
+                      "question":  "画面里河边细长的植物叫什么？",
+                      "expected":  "芦苇",
+                      "evidence_pages":  [
+                                             2
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  9968.8,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "画面里河边细长的植物叫什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  243,
+                                     "first_audio_ms":  9942,
+                                     "llm_ms":  9034,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  665,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q26",
+                      "category":  "视频画面",
+                      "page":  3,
+                      "question":  "结尾山坡下画了什么建筑？",
+                      "expected":  "房子|小屋",
+                      "evidence_pages":  [
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8231.6,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "结尾山坡下画了什么建筑？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8219,
+                                     "llm_ms":  7415,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  803,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q26",
+                      "category":  "视频画面",
+                      "page":  3,
+                      "question":  "结尾山坡下画了什么建筑？",
+                      "expected":  "房子|小屋",
+                      "evidence_pages":  [
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  8358.0,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "结尾山坡下画了什么建筑？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  235,
+                                     "first_audio_ms":  8312,
+                                     "llm_ms":  7417,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  660,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q27",
+                      "category":  "视频画面",
+                      "page":  3,
+                      "question":  "结尾小房子的屋顶是什么颜色？",
+                      "expected":  "红",
+                      "evidence_pages":  [
+                                             3
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  6923.0,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "结尾小房子的屋顶是什么颜色？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  6890,
+                                     "llm_ms":  6082,
+                                     "retrieve_ms":  1,
+                                     "review_ms":  807,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q27",
+                      "category":  "视频画面",
+                      "page":  3,
+                      "question":  "结尾小房子的屋顶是什么颜色？",
+                      "expected":  "红",
+                      "evidence_pages":  [
+                                             3
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  7223.9,
+                      "correct":  false,
+                      "evidence_hit":  false,
+                      "answer":  "这部分请和大人一起讨论吧。",
+                      "transcript":  "结尾小房子的屋顶是什么颜色？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  149,
+                                     "first_audio_ms":  7202,
+                                     "llm_ms":  6407,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  646,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q28",
+                      "category":  "书外拒答",
+                      "page":  1,
+                      "question":  "恐龙吃什么？",
+                      "expected":  "",
+                      "evidence_pages":  [
+
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8236.0,
+                      "correct":  true,
+                      "evidence_hit":  null,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "恐龙吃什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8228,
+                                     "llm_ms":  8228,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q28",
+                      "category":  "书外拒答",
+                      "page":  1,
+                      "question":  "恐龙吃什么？",
+                      "expected":  "",
+                      "evidence_pages":  [
+
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  7226.9,
+                      "correct":  true,
+                      "evidence_hit":  null,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "恐龙吃什么？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  100,
+                                     "first_audio_ms":  7201,
+                                     "llm_ms":  7101,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q29",
+                      "category":  "书外拒答",
+                      "page":  1,
+                      "question":  "朵朵的学校叫什么名字？",
+                      "expected":  "",
+                      "evidence_pages":  [
+
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  8195.9,
+                      "correct":  true,
+                      "evidence_hit":  null,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "朵朵的学校叫什么名字？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  8188,
+                                     "llm_ms":  8188,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q29",
+                      "category":  "书外拒答",
+                      "page":  1,
+                      "question":  "朵朵的学校叫什么名字？",
+                      "expected":  "",
+                      "evidence_pages":  [
+
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  5274.4,
+                      "correct":  true,
+                      "evidence_hit":  null,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "朵朵的学校叫什么名字？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  138,
+                                     "first_audio_ms":  5237,
+                                     "llm_ms":  5099,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q30",
+                      "category":  "书外拒答",
+                      "page":  1,
+                      "question":  "乌龟爷爷的电话是多少？",
+                      "expected":  "",
+                      "evidence_pages":  [
+
+                                         ],
+                      "mode":  "text",
+                      "response_ms":  7369.9,
+                      "correct":  true,
+                      "evidence_hit":  null,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "乌龟爷爷的电话是多少？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  0,
+                                     "first_audio_ms":  7360,
+                                     "llm_ms":  7360,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  },
+                  {
+                      "id":  "q30",
+                      "category":  "书外拒答",
+                      "page":  1,
+                      "question":  "乌龟爷爷的电话是多少？",
+                      "expected":  "",
+                      "evidence_pages":  [
+
+                                         ],
+                      "mode":  "audio",
+                      "response_ms":  6389.7,
+                      "correct":  true,
+                      "evidence_hit":  null,
+                      "answer":  "这本书里没有讲到哦。",
+                      "transcript":  "乌龟爷爷的电话是多少？",
+                      "evidence":  [
+
+                                   ],
+                      "stages":  {
+                                     "asr_ms":  125,
+                                     "first_audio_ms":  6365,
+                                     "llm_ms":  6240,
+                                     "retrieve_ms":  0,
+                                     "review_ms":  0,
+                                     "tts_ms":  0
+                                 }
+                  }
+              ],
+    "peak_llm_working_set_mib":  2184.4
+}

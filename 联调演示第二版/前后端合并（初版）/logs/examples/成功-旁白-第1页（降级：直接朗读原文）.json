@@ -1,0 +1,57 @@
+{
+  "run_id": "narration-20261111T085818-ff34ff",
+  "kind": "narration",
+  "parent_run_id": "narration_book-20261111T085818-6b64ca",
+  "status": "ok",
+  "started_at": "2026-11-11T08:58:18.082+08:00",
+  "finished_at": "2026-11-11T08:58:18.083+08:00",
+  "elapsed_ms": 0,
+  "code_version": "326ebd2",
+  "input": {
+    "book_id": "demo_book",
+    "page_no": 1,
+    "ocr_text": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。“月亮住在哪里呢？”朵朵想。",
+    "scene_summary": "夜晚的草地，天上有圆月和星星，左边有一棵大树，小兔子朵朵站在草地上仰头看月亮。",
+    "plot_events": [
+      "朵朵在草地上看见圆圆的月亮",
+      "朵朵好奇月亮住在哪里"
+    ],
+    "previous_narration": ""
+  },
+  "prompt": null,
+  "model": {
+    "name": null,
+    "provider": "local_passthrough",
+    "params": {}
+  },
+  "outputs": [],
+  "cost": null,
+  "notes": {
+    "attempts": [],
+    "result": {
+      "narration": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。“月亮住在哪里呢？”朵朵想。",
+      "run_id": "narration-20261111T085818-ff34ff",
+      "method": "passthrough_ocr",
+      "prompt_version": null,
+      "model": null,
+      "generated_at": "2026-11-11T08:58:18.083+08:00",
+      "attempts": 0,
+      "fallback_reason": "大模型未配置（SIMPLE_STORY_WRITER_URL），直接朗读原文",
+      "needs_review": true,
+      "check": {
+        "passed": true,
+        "hard_issues": [],
+        "soft_issues": [],
+        "metrics": {
+          "length": 37,
+          "original_length": 37,
+          "max_length": 112,
+          "support": 1.0,
+          "coverage": 1.0
+        }
+      }
+    },
+    "degraded": true
+  },
+  "error": null
+}

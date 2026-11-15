@@ -29,3 +29,10 @@ desktop.ini
 .tmp_audio_*
 # 前端音色模块运行时数据（含参考声音录音，属于个人语音数据，不入库）
 **/前端/work/
+
+# 本机下载的模型、交互媒体与儿童内容复核记录
+**/data/models/
+**/data/history/
+**/data/qa/
+**/data/tts/
+**/data/reviews/

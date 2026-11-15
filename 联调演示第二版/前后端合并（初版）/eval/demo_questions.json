@@ -1,0 +1,310 @@
+[
+  {
+    "id": "q01",
+    "category": "原文",
+    "page": 1,
+    "question": "故事的主角叫什么？",
+    "expected": "朵朵",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q02",
+    "category": "原文",
+    "page": 1,
+    "question": "朵朵是什么动物？",
+    "expected": "兔",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q03",
+    "category": "原文",
+    "page": 1,
+    "question": "故事开头是什么时候？",
+    "expected": "夜晚|晚上",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q04",
+    "category": "原文",
+    "page": 1,
+    "question": "朵朵一开始站在哪里？",
+    "expected": "草地",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q05",
+    "category": "原文",
+    "page": 1,
+    "question": "朵朵抬头看见了什么？",
+    "expected": "月亮",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q06",
+    "category": "原文",
+    "page": 1,
+    "question": "他看到的月亮是什么形状？",
+    "expected": "圆",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q07",
+    "category": "原文",
+    "page": 1,
+    "question": "朵朵心里在想什么？",
+    "expected": "月亮&哪里",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q08",
+    "category": "原文",
+    "page": 2,
+    "question": "朵朵后来走到哪里？",
+    "expected": "河边|小河",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q09",
+    "category": "原文",
+    "page": 2,
+    "question": "朵朵以为月亮掉到哪了？",
+    "expected": "水里|河里|河水",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q10",
+    "category": "原文",
+    "page": 2,
+    "question": "谁告诉朵朵那是月亮的影子？",
+    "expected": "乌龟",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q11",
+    "category": "原文",
+    "page": 2,
+    "question": "水里看到的月亮到底是什么？",
+    "expected": "倒影|影子",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q12",
+    "category": "原文",
+    "page": 2,
+    "question": "河边遇见了谁？",
+    "expected": "乌龟",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q13",
+    "category": "原文",
+    "page": 2,
+    "question": "乌龟爷爷说话快还是慢？",
+    "expected": "慢",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q14",
+    "category": "跨页",
+    "page": 3,
+    "question": "最后谁和朵朵一起看月亮？",
+    "expected": "乌龟",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q15",
+    "category": "跨页",
+    "page": 3,
+    "question": "它们最后坐在哪里？",
+    "expected": "山坡",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q16",
+    "category": "跨页",
+    "page": 3,
+    "question": "月亮最后在哪里？",
+    "expected": "天上",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q17",
+    "category": "跨页",
+    "page": 3,
+    "question": "朵朵和乌龟坐在山坡上做什么？",
+    "expected": "看月亮|看着月亮",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q18",
+    "category": "跨页",
+    "page": 3,
+    "question": "请按顺序说朵朵去了哪些地方？",
+    "expected": "草地&河&山坡",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q19",
+    "category": "跨页",
+    "page": 3,
+    "question": "月亮真的掉下去了吗？",
+    "expected": "没有|没掉|一直在天上",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q20",
+    "category": "跨页",
+    "page": 3,
+    "question": "故事里朵朵遇见的伙伴是谁？",
+    "expected": "乌龟",
+    "evidence_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "q21",
+    "category": "视频画面",
+    "page": 1,
+    "question": "片子开头，天空里除了月亮还画着什么发亮的小点？",
+    "expected": "星",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q22",
+    "category": "视频画面",
+    "page": 1,
+    "question": "片子开头，画面左边是什么植物？",
+    "expected": "树",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q23",
+    "category": "视频画面",
+    "page": 1,
+    "question": "朵朵脖子上的围巾在视频里是什么颜色？",
+    "expected": "蓝",
+    "evidence_pages": [
+      1
+    ]
+  },
+  {
+    "id": "q24",
+    "category": "视频画面",
+    "page": 2,
+    "question": "河边画面中，乌龟爷爷站在哪一岸？",
+    "expected": "右",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q25",
+    "category": "视频画面",
+    "page": 2,
+    "question": "画面里河边细长的植物叫什么？",
+    "expected": "芦苇",
+    "evidence_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q26",
+    "category": "视频画面",
+    "page": 3,
+    "question": "结尾山坡下画了什么建筑？",
+    "expected": "房子|小屋",
+    "evidence_pages": [
+      3
+    ]
+  },
+  {
+    "id": "q27",
+    "category": "视频画面",
+    "page": 3,
+    "question": "结尾小房子的屋顶是什么颜色？",
+    "expected": "红",
+    "evidence_pages": [
+      3
+    ]
+  },
+  {
+    "id": "q28",
+    "category": "书外拒答",
+    "page": 1,
+    "question": "恐龙吃什么？",
+    "expected": "",
+    "evidence_pages": []
+  },
+  {
+    "id": "q29",
+    "category": "书外拒答",
+    "page": 1,
+    "question": "朵朵的学校叫什么名字？",
+    "expected": "",
+    "evidence_pages": []
+  },
+  {
+    "id": "q30",
+    "category": "书外拒答",
+    "page": 1,
+    "question": "乌龟爷爷的电话是多少？",
+    "expected": "",
+    "evidence_pages": []
+  }
+]
