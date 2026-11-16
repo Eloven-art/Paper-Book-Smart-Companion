@@ -5,6 +5,8 @@
 .venv-export/
 __pycache__/
 .pytest_cache/
+.runtime-downloads/
+*.pbsc-extract
 *.pyc
 runtime/python/
 third_party/llama.cpp/*.exe

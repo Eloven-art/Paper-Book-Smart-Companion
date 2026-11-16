@@ -1,0 +1,1610 @@
+{
+  "assets": [
+    {
+      "name": "ocr-asr-models.zip",
+      "bytes": 249343378,
+      "sha256": "363378a26b91945f4990087d1ed84c3304976955016dec8a93af9ede310323e5",
+      "files": [
+        {
+          "path": "data/models/rapidocr/PP-OCRv6_det_small.onnx",
+          "bytes": 9929594
+        },
+        {
+          "path": "data/models/rapidocr/PP-OCRv6_rec_small.onnx",
+          "bytes": 21234383
+        },
+        {
+          "path": "data/models/rapidocr/ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+          "bytes": 585532
+        },
+        {
+          "path": "data/models/sensevoice/model_quant.onnx",
+          "bytes": 241216270
+        }
+      ]
+    },
+    {
+      "name": "windows-runtime.zip",
+      "bytes": 285683104,
+      "sha256": "ba53151ec9b6820bebb9b09104a32d45454d1ae657220dfa9c2abb7be8f7b28a",
+      "files": [
+        {
+          "path": "data/samples/demo_book/video/book.mp4",
+          "bytes": 1295523
+        },
+        {
+          "path": "data/samples/demo_book/video/clips/demo_book_p001.mp4",
+          "bytes": 397628
+        },
+        {
+          "path": "data/samples/demo_book/video/clips/demo_book_p002.mp4",
+          "bytes": 458855
+        },
+        {
+          "path": "data/samples/demo_book/video/clips/demo_book_p003.mp4",
+          "bytes": 359050
+        },
+        {
+          "path": "data/school-eval/third-pdf-backup.mp4",
+          "bytes": 389520
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_avif.cp313-win_amd64.pyd",
+          "bytes": 7828480
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_imaging.cp313-win_amd64.pyd",
+          "bytes": 2491392
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_imagingcms.cp313-win_amd64.pyd",
+          "bytes": 266240
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_imagingft.cp313-win_amd64.pyd",
+          "bytes": 2011136
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_imagingmath.cp313-win_amd64.pyd",
+          "bytes": 25088
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_imagingmorph.cp313-win_amd64.pyd",
+          "bytes": 13824
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_imagingtk.cp313-win_amd64.pyd",
+          "bytes": 14848
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/PIL/_webp.cp313-win_amd64.pyd",
+          "bytes": 409600
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/_cffi_backend.cp313-win_amd64.pyd",
+          "bytes": 180736
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/_soundfile_data/libsndfile_x64.dll",
+          "bytes": 2364416
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/aiohttp/_http_parser.cp313-win_amd64.pyd",
+          "bytes": 303104
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/aiohttp/_http_writer.cp313-win_amd64.pyd",
+          "bytes": 43520
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/aiohttp/_websocket/mask.cp313-win_amd64.pyd",
+          "bytes": 34816
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/aiohttp/_websocket/reader_c.cp313-win_amd64.pyd",
+          "bytes": 150528
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/cffi-gen-src.exe",
+          "bytes": 108471
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/dashscope.exe",
+          "bytes": 108473
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/dashscope1.exe",
+          "bytes": 108478
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/dotenv.exe",
+          "bytes": 108468
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/f2py.exe",
+          "bytes": 108472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/fastapi.exe",
+          "bytes": 108466
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/flask.exe",
+          "bytes": 108464
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/httpx.exe",
+          "bytes": 108460
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/idna.exe",
+          "bytes": 108463
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/imageio_download_bin.exe",
+          "bytes": 108497
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/imageio_remove_bin.exe",
+          "bytes": 108493
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/markdown-it.exe",
+          "bytes": 108476
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/normalizer.exe",
+          "bytes": 108489
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/numpy-config.exe",
+          "bytes": 108472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/onnxruntime_test.exe",
+          "bytes": 108489
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/py.test.exe",
+          "bytes": 108487
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/pygmentize.exe",
+          "bytes": 108471
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/pypdfium2.exe",
+          "bytes": 108485
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/pytest.exe",
+          "bytes": 108487
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/tqdm.exe",
+          "bytes": 108463
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/typer.exe",
+          "bytes": 108464
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/uvicorn.exe",
+          "bytes": 108467
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/websockets.exe",
+          "bytes": 108469
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/bin/wsdump.exe",
+          "bytes": 108472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/charset_normalizer/cd.cp313-win_amd64.pyd",
+          "bytes": 115200
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/charset_normalizer/md.cp313-win_amd64.pyd",
+          "bytes": 206336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/cryptography/hazmat/bindings/_rust.pyd",
+          "bytes": 9897472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/cv2/cv2.pyd",
+          "bytes": 86293504
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/cv2/opencv_videoio_ffmpeg500_64.dll",
+          "bytes": 30876160
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/frozenlist/_frozenlist.cp313-win_amd64.pyd",
+          "bytes": 68608
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/google/_upb/_message.pyd",
+          "bytes": 745134
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v9.0.2.exe",
+          "bytes": 105423872
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/kaldi_native_fbank/lib/_kaldi_native_fbank.cp313-win_amd64.pyd",
+          "bytes": 800768
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/llvmlite.libs/msvcp140-8f141b4454fa78db34bc1f28c571b4da.dll",
+          "bytes": 557648
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/llvmlite/binding/llvmlite.dll",
+          "bytes": 120369664
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/markupsafe/_speedups.cp313-win_amd64.pyd",
+          "bytes": 11776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/msgpack/_cmsgpack.cp313-win_amd64.pyd",
+          "bytes": 135168
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/multidict/_multidict.cp313-win_amd64.pyd",
+          "bytes": 133632
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/multidict/_testcapi.cp313-win_amd64.pyd",
+          "bytes": 20992
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/_devicearray.cp313-win_amd64.pyd",
+          "bytes": 12288
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/_dispatcher.cp313-win_amd64.pyd",
+          "bytes": 41472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/_dynfunc.cp313-win_amd64.pyd",
+          "bytes": 16896
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/_helperlib.cp313-win_amd64.pyd",
+          "bytes": 203776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/core/runtime/_nrt_python.cp313-win_amd64.pyd",
+          "bytes": 25088
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/core/typeconv/_typeconv.cp313-win_amd64.pyd",
+          "bytes": 20480
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/cuda/cudadrv/_extras.cp313-win_amd64.pyd",
+          "bytes": 10752
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/experimental/jitclass/_box.cp313-win_amd64.pyd",
+          "bytes": 12800
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/mviewbuf.cp313-win_amd64.pyd",
+          "bytes": 14848
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/np/ufunc/_internal.cp313-win_amd64.pyd",
+          "bytes": 23552
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/np/ufunc/_num_threads.cp313-win_amd64.pyd",
+          "bytes": 10752
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/np/ufunc/omppool.cp313-win_amd64.pyd",
+          "bytes": 36352
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/np/ufunc/tbbpool.cp313-win_amd64.pyd",
+          "bytes": 46592
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numba/np/ufunc/workqueue.cp313-win_amd64.pyd",
+          "bytes": 38400
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy.libs/libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll",
+          "bytes": 20589056
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+          "bytes": 575056
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_multiarray_tests.cp313-win_amd64.pyd",
+          "bytes": 65024
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_multiarray_umath.cp313-win_amd64.pyd",
+          "bytes": 3854336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_operand_flag_tests.cp313-win_amd64.pyd",
+          "bytes": 12288
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_rational_tests.cp313-win_amd64.pyd",
+          "bytes": 43520
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_simd.cp313-win_amd64.pyd",
+          "bytes": 831488
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_struct_ufunc_tests.cp313-win_amd64.pyd",
+          "bytes": 14336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/_core/_umath_tests.cp313-win_amd64.pyd",
+          "bytes": 34304
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/fft/_pocketfft_umath.cp313-win_amd64.pyd",
+          "bytes": 276480
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/linalg/_umath_linalg.cp313-win_amd64.pyd",
+          "bytes": 112640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/linalg/lapack_lite.cp313-win_amd64.pyd",
+          "bytes": 18944
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_bounded_integers.cp313-win_amd64.pyd",
+          "bytes": 208896
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_common.cp313-win_amd64.pyd",
+          "bytes": 174080
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_generator.cp313-win_amd64.pyd",
+          "bytes": 623104
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_mt19937.cp313-win_amd64.pyd",
+          "bytes": 92160
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_pcg64.cp313-win_amd64.pyd",
+          "bytes": 103936
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_philox.cp313-win_amd64.pyd",
+          "bytes": 88576
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/_sfc64.cp313-win_amd64.pyd",
+          "bytes": 62976
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/bit_generator.cp313-win_amd64.pyd",
+          "bytes": 172032
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/numpy/random/mtrand.cp313-win_amd64.pyd",
+          "bytes": 521728
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/onnxruntime/capi/onnxruntime.dll",
+          "bytes": 22668600
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/onnxruntime/capi/onnxruntime_providers_shared.dll",
+          "bytes": 21816
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/onnxruntime/capi/onnxruntime_pybind11_state.pyd",
+          "bytes": 23517024
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/onnxruntime/datasets/logreg_iris.onnx",
+          "bytes": 670
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/onnxruntime/datasets/mul_1.onnx",
+          "bytes": 130
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/onnxruntime/datasets/sigmoid.onnx",
+          "bytes": 103
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/pkg_resources/tests/data/my-test-package-zip/my-test-package.zip",
+          "bytes": 1809
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/pooch/tests/data/store.zip",
+          "bytes": 780
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/pooch/tests/data/tiny-data.zip",
+          "bytes": 235
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/propcache/_helpers_c.cp313-win_amd64.pyd",
+          "bytes": 64512
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/pyclipper/_pyclipper.cp313-win_amd64.pyd",
+          "bytes": 222208
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/pydantic_core/_pydantic_core.cp313-win_amd64.pyd",
+          "bytes": 5766656
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/pypdfium2_raw/pdfium.dll",
+          "bytes": 7835648
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/regex/_regex.cp313-win_amd64.pyd",
+          "bytes": 736768
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy.libs/libscipy_openblas-197ee2fc9b4d071f7e048078cac74115.dll",
+          "bytes": 20262912
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_cyutility.cp313-win_amd64.pyd",
+          "bytes": 192000
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/_ccallback_c.cp313-win_amd64.pyd",
+          "bytes": 105984
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/_fpumode.cp313-win_amd64.pyd",
+          "bytes": 12288
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/_test_ccallback.cp313-win_amd64.pyd",
+          "bytes": 48128
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/_test_deprecation_call.cp313-win_amd64.pyd",
+          "bytes": 36352
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/_test_deprecation_def.cp313-win_amd64.pyd",
+          "bytes": 21504
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/_uarray/_uarray.cp313-win_amd64.pyd",
+          "bytes": 247296
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/_lib/messagestream.cp313-win_amd64.pyd",
+          "bytes": 60928
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/cluster/hierarchy/_hierarchy.cp313-win_amd64.pyd",
+          "bytes": 221184
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/cluster/hierarchy/_optimal_leaf_ordering.cp313-win_amd64.pyd",
+          "bytes": 168448
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/cluster/vq/_vq.cp313-win_amd64.pyd",
+          "bytes": 103424
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/fft/_duccfft/pyduccfft.cp313-win_amd64.pyd",
+          "bytes": 2786816
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/fftpack/convolve.cp313-win_amd64.pyd",
+          "bytes": 116736
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/integrate/_dop.cp313-win_amd64.pyd",
+          "bytes": 87040
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/integrate/_odepack.cp313-win_amd64.pyd",
+          "bytes": 98816
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/integrate/_quadpack.cp313-win_amd64.pyd",
+          "bytes": 142336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/integrate/_test_multivariate.cp313-win_amd64.pyd",
+          "bytes": 13824
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/integrate/_vode.cp313-win_amd64.pyd",
+          "bytes": 139264
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/interpolate/_dierckx.cp313-win_amd64.pyd",
+          "bytes": 292864
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/interpolate/_fitpack.cp313-win_amd64.pyd",
+          "bytes": 346112
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/interpolate/_interpnd.cp313-win_amd64.pyd",
+          "bytes": 233472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/interpolate/_ppoly.cp313-win_amd64.pyd",
+          "bytes": 204800
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/interpolate/_rbfinterp_pythran.cp313-win_amd64.pyd",
+          "bytes": 1144832
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/interpolate/_rgi_cython.cp313-win_amd64.pyd",
+          "bytes": 120320
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/io/_fast_matrix_market/_fmm_core.cp313-win_amd64.pyd",
+          "bytes": 2880000
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/io/matlab/_mio5_utils.cp313-win_amd64.pyd",
+          "bytes": 184320
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/io/matlab/_mio_utils.cp313-win_amd64.pyd",
+          "bytes": 52736
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/io/matlab/_streams.cp313-win_amd64.pyd",
+          "bytes": 111104
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_batched_linalg.cp313-win_amd64.pyd",
+          "bytes": 1165824
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_cythonized_array_utils.cp313-win_amd64.pyd",
+          "bytes": 199168
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_decomp_interpolative.cp313-win_amd64.pyd",
+          "bytes": 740864
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_decomp_update.cp313-win_amd64.pyd",
+          "bytes": 304128
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_fblas.cp313-win_amd64.pyd",
+          "bytes": 739840
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_flapack.cp313-win_amd64.pyd",
+          "bytes": 2301952
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_internal_matfuncs.cp313-win_amd64.pyd",
+          "bytes": 172032
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_linalg_pythran.cp313-win_amd64.pyd",
+          "bytes": 1038336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_matfuncs_sqrtm_triu.cp313-win_amd64.pyd",
+          "bytes": 107520
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/_solve_toeplitz.cp313-win_amd64.pyd",
+          "bytes": 123392
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/cython_blas.cp313-win_amd64.pyd",
+          "bytes": 127488
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/linalg/cython_lapack.cp313-win_amd64.pyd",
+          "bytes": 203264
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/ndimage/_ctest.cp313-win_amd64.pyd",
+          "bytes": 13824
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/ndimage/_cytest.cp313-win_amd64.pyd",
+          "bytes": 73216
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/ndimage/_nd_image.cp313-win_amd64.pyd",
+          "bytes": 196608
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/ndimage/_ni_label.cp313-win_amd64.pyd",
+          "bytes": 209920
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/ndimage/_rank_filter_1d.cp313-win_amd64.pyd",
+          "bytes": 128000
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/odr/__odrpack.cp313-win_amd64.pyd",
+          "bytes": 715776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_bglu_dense.cp313-win_amd64.pyd",
+          "bytes": 173568
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_direct.cp313-win_amd64.pyd",
+          "bytes": 70656
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_group_columns.cp313-win_amd64.pyd",
+          "bytes": 1007616
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_highspy/_core.cp313-win_amd64.pyd",
+          "bytes": 6709760
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_highspy/_highs_options.cp313-win_amd64.pyd",
+          "bytes": 543232
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_lbfgsb.cp313-win_amd64.pyd",
+          "bytes": 49664
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_lsap.cp313-win_amd64.pyd",
+          "bytes": 190976
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_lsq/givens_elimination.cp313-win_amd64.pyd",
+          "bytes": 69632
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_minpack.cp313-win_amd64.pyd",
+          "bytes": 125952
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_moduleTNC.cp313-win_amd64.pyd",
+          "bytes": 147968
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_pava_pybind.cp313-win_amd64.pyd",
+          "bytes": 324096
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_slsqplib.cp313-win_amd64.pyd",
+          "bytes": 48640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_trlib/_trlib.cp313-win_amd64.pyd",
+          "bytes": 206336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/_zeros.cp313-win_amd64.pyd",
+          "bytes": 23040
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/optimize/cython_optimize/_zeros.cp313-win_amd64.pyd",
+          "bytes": 82432
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/signal/_max_len_seq_inner.cp313-win_amd64.pyd",
+          "bytes": 979968
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/signal/_peak_finding_utils.cp313-win_amd64.pyd",
+          "bytes": 130048
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/signal/_sigtools.cp313-win_amd64.pyd",
+          "bytes": 119296
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/signal/_sosfilt.cp313-win_amd64.pyd",
+          "bytes": 110592
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/signal/_spline.cp313-win_amd64.pyd",
+          "bytes": 59392
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/signal/_upfirdn_apply.cp313-win_amd64.pyd",
+          "bytes": 192512
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/_csparsetools.cp313-win_amd64.pyd",
+          "bytes": 406016
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/_sparsetools.cp313-win_amd64.pyd",
+          "bytes": 4239360
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_flow.cp313-win_amd64.pyd",
+          "bytes": 184320
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_matching.cp313-win_amd64.pyd",
+          "bytes": 182272
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cp313-win_amd64.pyd",
+          "bytes": 103424
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_reordering.cp313-win_amd64.pyd",
+          "bytes": 151552
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_shortest_path.cp313-win_amd64.pyd",
+          "bytes": 655360
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_tools.cp313-win_amd64.pyd",
+          "bytes": 158720
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/csgraph/_traversal.cp313-win_amd64.pyd",
+          "bytes": 503808
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/linalg/_dsolve/_superlu.cp313-win_amd64.pyd",
+          "bytes": 425984
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/linalg/_eigen/arpack/_arpacklib.cp313-win_amd64.pyd",
+          "bytes": 223232
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/sparse/linalg/_propack.cp313-win_amd64.pyd",
+          "bytes": 166912
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/_ckdtree.cp313-win_amd64.pyd",
+          "bytes": 863232
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/_distance_pybind.cp313-win_amd64.pyd",
+          "bytes": 1479168
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/_distance_wrap.cp313-win_amd64.pyd",
+          "bytes": 128512
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/_hausdorff.cp313-win_amd64.pyd",
+          "bytes": 92672
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/_qhull.cp313-win_amd64.pyd",
+          "bytes": 870400
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/_voronoi.cp313-win_amd64.pyd",
+          "bytes": 87040
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/transform/_rigid_transform_cy.cp313-win_amd64.pyd",
+          "bytes": 237568
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/spatial/transform/_rotation_cy.cp313-win_amd64.pyd",
+          "bytes": 524800
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_comb.cp313-win_amd64.pyd",
+          "bytes": 48128
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_ellip_harm_2.cp313-win_amd64.pyd",
+          "bytes": 131072
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_gufuncs.cp313-win_amd64.pyd",
+          "bytes": 937984
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_specfun.cp313-win_amd64.pyd",
+          "bytes": 311296
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_special_ufuncs.cp313-win_amd64.pyd",
+          "bytes": 1630720
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_test_internal.cp313-win_amd64.pyd",
+          "bytes": 94208
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_ufuncs.cp313-win_amd64.pyd",
+          "bytes": 1434112
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/_ufuncs_cxx.cp313-win_amd64.pyd",
+          "bytes": 2673664
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/special/cython_special.cp313-win_amd64.pyd",
+          "bytes": 2272256
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_ansari_swilk_statistics.cp313-win_amd64.pyd",
+          "bytes": 105472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_biasedurn.cp313-win_amd64.pyd",
+          "bytes": 375296
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_levy_stable/levyst.cp313-win_amd64.pyd",
+          "bytes": 45568
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_qmc_cy.cp313-win_amd64.pyd",
+          "bytes": 1070080
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_qmvnt_cy.cp313-win_amd64.pyd",
+          "bytes": 127488
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_rcont/rcont.cp313-win_amd64.pyd",
+          "bytes": 109056
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_sobol.cp313-win_amd64.pyd",
+          "bytes": 166400
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_stats.cp313-win_amd64.pyd",
+          "bytes": 452096
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_stats_pythran.cp313-win_amd64.pyd",
+          "bytes": 1044992
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/scipy/stats/_unuran/unuran_wrapper.cp313-win_amd64.pyd",
+          "bytes": 1264640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sentencepiece.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+          "bytes": 575056
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sentencepiece.libs/vcomp140-f96f3a14d88d8846f31f3ab38a490304.dll",
+          "bytes": 213072
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sentencepiece/_sentencepiece.cp313-win_amd64.pyd",
+          "bytes": 1722880
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/cli-32.exe",
+          "bytes": 11776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/cli-64.exe",
+          "bytes": 14336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/cli-arm64.exe",
+          "bytes": 13824
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/cli.exe",
+          "bytes": 11776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/gui-32.exe",
+          "bytes": 11776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/gui-64.exe",
+          "bytes": 14336
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/gui-arm64.exe",
+          "bytes": 13824
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/setuptools/gui.exe",
+          "bytes": 11776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/shapely.libs/geos-bf067cd6ff74ee0ad5f3ff52c7ef08c9.dll",
+          "bytes": 2627584
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/shapely.libs/geos_c-6dd9fd915eef8a7928285416bef1e666.dll",
+          "bytes": 501760
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/shapely.libs/msvcp140-0fa7eb792d3fbcf2233e4ea47e9144b9.dll",
+          "bytes": 557416
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/shapely/_geometry_helpers.cp313-win_amd64.pyd",
+          "bytes": 233472
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/shapely/_geos.cp313-win_amd64.pyd",
+          "bytes": 49664
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/shapely/lib.cp313-win_amd64.pyd",
+          "bytes": 166912
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/.libs/msvcp140.dll",
+          "bytes": 643512
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/.libs/vcomp140.dll",
+          "bytes": 212920
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/__check_build/_check_build.cp313-win_amd64.pyd",
+          "bytes": 28160
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/_cyutility.cp313-win_amd64.pyd",
+          "bytes": 128000
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/_isotonic.cp313-win_amd64.pyd",
+          "bytes": 88576
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/_loss/_loss.cp313-win_amd64.pyd",
+          "bytes": 1323520
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_dbscan_inner.cp313-win_amd64.pyd",
+          "bytes": 43520
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_hdbscan/_linkage.cp313-win_amd64.pyd",
+          "bytes": 88064
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_hdbscan/_reachability.cp313-win_amd64.pyd",
+          "bytes": 144384
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_hdbscan/_tree.cp313-win_amd64.pyd",
+          "bytes": 167936
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_hierarchical_fast.cp313-win_amd64.pyd",
+          "bytes": 115200
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_k_means_common.cp313-win_amd64.pyd",
+          "bytes": 196096
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_k_means_elkan.cp313-win_amd64.pyd",
+          "bytes": 223232
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_k_means_lloyd.cp313-win_amd64.pyd",
+          "bytes": 144384
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/cluster/_k_means_minibatch.cp313-win_amd64.pyd",
+          "bytes": 99328
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/datasets/_svmlight_format_fast.cp313-win_amd64.pyd",
+          "bytes": 271872
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/decomposition/_cdnmf_fast.cp313-win_amd64.pyd",
+          "bytes": 58880
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/decomposition/_online_lda_fast.cp313-win_amd64.pyd",
+          "bytes": 82432
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_gradient_boosting.cp313-win_amd64.pyd",
+          "bytes": 69632
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_hist_gradient_boosting/_binning.cp313-win_amd64.pyd",
+          "bytes": 43008
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_hist_gradient_boosting/_gradient_boosting.cp313-win_amd64.pyd",
+          "bytes": 46080
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_hist_gradient_boosting/_predictor.cp313-win_amd64.pyd",
+          "bytes": 64000
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.cp313-win_amd64.pyd",
+          "bytes": 29696
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_hist_gradient_boosting/histogram.cp313-win_amd64.pyd",
+          "bytes": 127488
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/ensemble/_hist_gradient_boosting/splitting.cp313-win_amd64.pyd",
+          "bytes": 137216
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/feature_extraction/_hashing_fast.cp313-win_amd64.pyd",
+          "bytes": 58880
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/linear_model/_cd_fast.cp313-win_amd64.pyd",
+          "bytes": 318976
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/linear_model/_sag_fast.cp313-win_amd64.pyd",
+          "bytes": 93696
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/linear_model/_sgd_fast.cp313-win_amd64.pyd",
+          "bytes": 138752
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/manifold/_barnes_hut_tsne.cp313-win_amd64.pyd",
+          "bytes": 64000
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/manifold/_utils.cp313-win_amd64.pyd",
+          "bytes": 46080
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_dist_metrics.cp313-win_amd64.pyd",
+          "bytes": 374784
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin.cp313-win_amd64.pyd",
+          "bytes": 124928
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin_classmode.cp313-win_amd64.pyd",
+          "bytes": 84480
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_base.cp313-win_amd64.pyd",
+          "bytes": 107008
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.cp313-win_amd64.pyd",
+          "bytes": 195584
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.cp313-win_amd64.pyd",
+          "bytes": 203776
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.cp313-win_amd64.pyd",
+          "bytes": 158720
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors_classmode.cp313-win_amd64.pyd",
+          "bytes": 93184
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/_pairwise_fast.cp313-win_amd64.pyd",
+          "bytes": 82432
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.cp313-win_amd64.pyd",
+          "bytes": 53248
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/neighbors/_ball_tree.cp313-win_amd64.pyd",
+          "bytes": 368640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/neighbors/_kd_tree.cp313-win_amd64.pyd",
+          "bytes": 368640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/neighbors/_partition_nodes.cp313-win_amd64.pyd",
+          "bytes": 36864
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/neighbors/_quad_tree.cp313-win_amd64.pyd",
+          "bytes": 106496
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cp313-win_amd64.pyd",
+          "bytes": 215040
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/preprocessing/_target_encoder_fast.cp313-win_amd64.pyd",
+          "bytes": 232960
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/svm/_liblinear.cp313-win_amd64.pyd",
+          "bytes": 111616
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/svm/_libsvm.cp313-win_amd64.pyd",
+          "bytes": 241152
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/svm/_libsvm_sparse.cp313-win_amd64.pyd",
+          "bytes": 195072
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/svm/_newrand.cp313-win_amd64.pyd",
+          "bytes": 38912
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/tree/_criterion.cp313-win_amd64.pyd",
+          "bytes": 150016
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/tree/_partitioner.cp313-win_amd64.pyd",
+          "bytes": 110592
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/tree/_splitter.cp313-win_amd64.pyd",
+          "bytes": 86528
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/tree/_tree.cp313-win_amd64.pyd",
+          "bytes": 279040
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/tree/_utils.cp313-win_amd64.pyd",
+          "bytes": 63488
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_bitset.cp313-win_amd64.pyd",
+          "bytes": 43008
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_cython_blas.cp313-win_amd64.pyd",
+          "bytes": 152064
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_fast_dict.cp313-win_amd64.pyd",
+          "bytes": 89088
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_heap.cp313-win_amd64.pyd",
+          "bytes": 17408
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_isfinite.cp313-win_amd64.pyd",
+          "bytes": 56320
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_openmp_helpers.cp313-win_amd64.pyd",
+          "bytes": 42496
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_random.cp313-win_amd64.pyd",
+          "bytes": 112640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_seq_dataset.cp313-win_amd64.pyd",
+          "bytes": 117248
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_sorting.cp313-win_amd64.pyd",
+          "bytes": 56832
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_typedefs.cp313-win_amd64.pyd",
+          "bytes": 73728
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_vector_sentinel.cp313-win_amd64.pyd",
+          "bytes": 95232
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/_weight_vector.cp313-win_amd64.pyd",
+          "bytes": 48640
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/arrayfuncs.cp313-win_amd64.pyd",
+          "bytes": 84480
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/murmurhash.cp313-win_amd64.pyd",
+          "bytes": 58880
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/sklearn/utils/sparsefuncs_fast.cp313-win_amd64.pyd",
+          "bytes": 463360
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/soxr/soxr_ext.pyd",
+          "bytes": 354304
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/tiktoken/_tiktoken.cp313-win_amd64.pyd",
+          "bytes": 2451456
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/websockets/speedups.cp313-win_amd64.pyd",
+          "bytes": 11264
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/yaml/_yaml.cp313-win_amd64.pyd",
+          "bytes": 253952
+        },
+        {
+          "path": "runtime/python/Lib/site-packages/yarl/_quoting_c.cp313-win_amd64.pyd",
+          "bytes": 80384
+        },
+        {
+          "path": "runtime/python/_asyncio.pyd",
+          "bytes": 72928
+        },
+        {
+          "path": "runtime/python/_bz2.pyd",
+          "bytes": 86752
+        },
+        {
+          "path": "runtime/python/_ctypes.pyd",
+          "bytes": 134368
+        },
+        {
+          "path": "runtime/python/_decimal.pyd",
+          "bytes": 286432
+        },
+        {
+          "path": "runtime/python/_elementtree.pyd",
+          "bytes": 136416
+        },
+        {
+          "path": "runtime/python/_hashlib.pyd",
+          "bytes": 69344
+        },
+        {
+          "path": "runtime/python/_lzma.pyd",
+          "bytes": 159456
+        },
+        {
+          "path": "runtime/python/_multiprocessing.pyd",
+          "bytes": 38112
+        },
+        {
+          "path": "runtime/python/_overlapped.pyd",
+          "bytes": 57568
+        },
+        {
+          "path": "runtime/python/_queue.pyd",
+          "bytes": 35552
+        },
+        {
+          "path": "runtime/python/_socket.pyd",
+          "bytes": 86752
+        },
+        {
+          "path": "runtime/python/_sqlite3.pyd",
+          "bytes": 131296
+        },
+        {
+          "path": "runtime/python/_ssl.pyd",
+          "bytes": 190688
+        },
+        {
+          "path": "runtime/python/_uuid.pyd",
+          "bytes": 27872
+        },
+        {
+          "path": "runtime/python/_wmi.pyd",
+          "bytes": 39648
+        },
+        {
+          "path": "runtime/python/_zoneinfo.pyd",
+          "bytes": 51424
+        },
+        {
+          "path": "runtime/python/libcrypto-3.dll",
+          "bytes": 6021880
+        },
+        {
+          "path": "runtime/python/libffi-8.dll",
+          "bytes": 39696
+        },
+        {
+          "path": "runtime/python/libssl-3.dll",
+          "bytes": 1308920
+        },
+        {
+          "path": "runtime/python/pyexpat.pyd",
+          "bytes": 200416
+        },
+        {
+          "path": "runtime/python/python.exe",
+          "bytes": 105696
+        },
+        {
+          "path": "runtime/python/python3.dll",
+          "bytes": 72416
+        },
+        {
+          "path": "runtime/python/python313.dll",
+          "bytes": 6142688
+        },
+        {
+          "path": "runtime/python/python313.zip",
+          "bytes": 3837054
+        },
+        {
+          "path": "runtime/python/pythonw.exe",
+          "bytes": 104160
+        },
+        {
+          "path": "runtime/python/select.pyd",
+          "bytes": 32992
+        },
+        {
+          "path": "runtime/python/sqlite3.dll",
+          "bytes": 1584864
+        },
+        {
+          "path": "runtime/python/unicodedata.pyd",
+          "bytes": 712416
+        },
+        {
+          "path": "runtime/python/vcruntime140.dll",
+          "bytes": 178616
+        },
+        {
+          "path": "runtime/python/vcruntime140_1.dll",
+          "bytes": 50112
+        },
+        {
+          "path": "runtime/python/winsound.pyd",
+          "bytes": 31968
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-base.dll",
+          "bytes": 832000
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-alderlake.dll",
+          "bytes": 1462272
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-cannonlake.dll",
+          "bytes": 1695232
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-cascadelake.dll",
+          "bytes": 1668096
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-cooperlake.dll",
+          "bytes": 1677824
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-haswell.dll",
+          "bytes": 1466880
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-icelake.dll",
+          "bytes": 1674752
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-ivybridge.dll",
+          "bytes": 1348096
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-piledriver.dll",
+          "bytes": 1341440
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-sandybridge.dll",
+          "bytes": 1316352
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-sapphirerapids.dll",
+          "bytes": 1954304
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-skylakex.dll",
+          "bytes": 1688064
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-sse42.dll",
+          "bytes": 939520
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-x64.dll",
+          "bytes": 932352
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-cpu-zen4.dll",
+          "bytes": 1684480
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-rpc-server.exe",
+          "bytes": 117248
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-rpc.dll",
+          "bytes": 234496
+        },
+        {
+          "path": "third_party/llama.cpp/ggml-vulkan.dll",
+          "bytes": 42164224
+        },
+        {
+          "path": "third_party/llama.cpp/ggml.dll",
+          "bytes": 78848
+        },
+        {
+          "path": "third_party/llama.cpp/libomp.dll",
+          "bytes": 768000
+        },
+        {
+          "path": "third_party/llama.cpp/llama-batched-bench-impl.dll",
+          "bytes": 62464
+        },
+        {
+          "path": "third_party/llama.cpp/llama-batched-bench.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-bench-impl.dll",
+          "bytes": 406016
+        },
+        {
+          "path": "third_party/llama.cpp/llama-bench.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-cli-impl.dll",
+          "bytes": 3398656
+        },
+        {
+          "path": "third_party/llama.cpp/llama-cli.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-common.dll",
+          "bytes": 8534528
+        },
+        {
+          "path": "third_party/llama.cpp/llama-completion-impl.dll",
+          "bytes": 139264
+        },
+        {
+          "path": "third_party/llama.cpp/llama-completion.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-connect.exe",
+          "bytes": 11473920
+        },
+        {
+          "path": "third_party/llama.cpp/llama-fit-params-impl.dll",
+          "bytes": 48128
+        },
+        {
+          "path": "third_party/llama.cpp/llama-fit-params.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-gemma3-cli.exe",
+          "bytes": 27648
+        },
+        {
+          "path": "third_party/llama.cpp/llama-gguf-split.exe",
+          "bytes": 61952
+        },
+        {
+          "path": "third_party/llama.cpp/llama-imatrix.exe",
+          "bytes": 254976
+        },
+        {
+          "path": "third_party/llama.cpp/llama-llava-cli.exe",
+          "bytes": 27648
+        },
+        {
+          "path": "third_party/llama.cpp/llama-minicpmv-cli.exe",
+          "bytes": 27648
+        },
+        {
+          "path": "third_party/llama.cpp/llama-mtmd-cli.exe",
+          "bytes": 97792
+        },
+        {
+          "path": "third_party/llama.cpp/llama-mtmd-debug.exe",
+          "bytes": 56832
+        },
+        {
+          "path": "third_party/llama.cpp/llama-perplexity-impl.dll",
+          "bytes": 198144
+        },
+        {
+          "path": "third_party/llama.cpp/llama-perplexity.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-quantize-impl.dll",
+          "bytes": 141312
+        },
+        {
+          "path": "third_party/llama.cpp/llama-quantize.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-qwen2vl-cli.exe",
+          "bytes": 27648
+        },
+        {
+          "path": "third_party/llama.cpp/llama-results.exe",
+          "bytes": 47616
+        },
+        {
+          "path": "third_party/llama.cpp/llama-server-impl.dll",
+          "bytes": 10339840
+        },
+        {
+          "path": "third_party/llama.cpp/llama-server.exe",
+          "bytes": 9728
+        },
+        {
+          "path": "third_party/llama.cpp/llama-tokenize.exe",
+          "bytes": 59904
+        },
+        {
+          "path": "third_party/llama.cpp/llama-tts.exe",
+          "bytes": 47104
+        },
+        {
+          "path": "third_party/llama.cpp/llama.dll",
+          "bytes": 3877376
+        },
+        {
+          "path": "third_party/llama.cpp/llama.exe",
+          "bytes": 105984
+        },
+        {
+          "path": "third_party/llama.cpp/mtmd.dll",
+          "bytes": 2245120
+        },
+        {
+          "path": "\u524d\u7aef/assets/preview/demo_book/video/book.mp4",
+          "bytes": 1295523
+        },
+        {
+          "path": "\u524d\u7aef/assets/preview/demo_book/video/clips/demo_book_p001.mp4",
+          "bytes": 397628
+        },
+        {
+          "path": "\u524d\u7aef/assets/preview/demo_book/video/clips/demo_book_p002.mp4",
+          "bytes": 458855
+        },
+        {
+          "path": "\u524d\u7aef/assets/preview/demo_book/video/clips/demo_book_p003.mp4",
+          "bytes": 359050
+        }
+      ]
+    }
+  ]
+}

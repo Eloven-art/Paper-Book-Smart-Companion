@@ -20,6 +20,7 @@ def main() -> int:
     parser.add_argument("--host", default=settings.host,
                         help="监听地址。默认 127.0.0.1 只允许本机；平板联调时用 0.0.0.0")
     parser.add_argument("--port", type=int, default=settings.port)
+    parser.add_argument("--open-browser", metavar="PATH", help="服务就绪后打开本机浏览器")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.DEBUG if settings.debug else logging.INFO,
@@ -34,6 +35,20 @@ def main() -> int:
         print(f"  外部服务 {name}: {'已配置 ' + str(info['model'] or '') if info['configured'] else '未配置（走降级方案）'}")
 
     from werkzeug.serving import run_simple
+    if args.open_browser:
+        import threading
+        import webbrowser
+
+        from werkzeug.serving import make_server
+
+        live = make_server(args.host, args.port, app, threaded=True)
+        browser_host = {"0.0.0.0": "127.0.0.1", "::": "::1"}.get(args.host, args.host)
+        if ":" in browser_host:
+            browser_host = f"[{browser_host}]"
+        url = f"http://{browser_host}:{live.server_port}/{args.open_browser.lstrip('/')}"
+        threading.Thread(target=webbrowser.open, args=(url,), daemon=True).start()
+        live.serve_forever()
+        return 0
     run_simple(args.host, args.port, app, threaded=True, use_reloader=False, use_debugger=False)
     return 0
 

@@ -20,10 +20,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from model_download import download, valid
+from scripts.model_download import download, valid
 
 FILENAME = "Qwen3-4B-Instruct-2507-Q4_K_M.gguf"
 EXPECTED_SIZE = 2497281120
+EXPECTED_SHA256 = "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597"
 SOURCES = (
     f"https://modelscope.cn/models/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/master/{FILENAME}",
     f"https://hf-mirror.com/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/main/{FILENAME}",
@@ -46,14 +47,14 @@ def main() -> int:
     print(f"模型目录：{model_dir}")
 
     target = model_dir / FILENAME
-    sources, size, digest = SOURCES, EXPECTED_SIZE, None
+    sources, size, digest = SOURCES, EXPECTED_SIZE, EXPECTED_SHA256
     if args.lite:
         target = model_dir / "Qwen3-0.6B-Q8_0.gguf"
         path = "/Qwen/Qwen3-0.6B-GGUF/resolve/1eaf4d9/" + target.name
         sources = tuple(host + path for host in ("https://huggingface.co","https://hf-mirror.com"))
         size, digest = None, "9465e63a22add5354d9bb4b99e90117043c7124007664907259bd16d043bb031"
     if valid(target,size,digest):
-        print(f"  已存在且大小正确：{target.name}")
+        print(f"  已存在且校验通过：{target.name}")
         return 0
 
     errors = []
