@@ -1,0 +1,18 @@
+{
+  "bytes": 2497281120,
+  "parts": [
+    {
+      "name": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf.001",
+      "bytes": 838860800
+    },
+    {
+      "name": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf.002",
+      "bytes": 838860800
+    },
+    {
+      "name": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf.003",
+      "bytes": 819559520
+    }
+  ],
+  "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597"
+}

@@ -1,0 +1,53 @@
+{
+  "run_id": "tts-20261111T085818-73c0c5",
+  "kind": "tts",
+  "parent_run_id": "video_page-20261111T085818-0342f2",
+  "status": "ok",
+  "started_at": "2026-11-11T08:58:18.103+08:00",
+  "finished_at": "2026-11-11T08:58:18.122+08:00",
+  "elapsed_ms": 19,
+  "code_version": "326ebd2",
+  "input": {
+    "book_id": "demo_book",
+    "page_no": 1,
+    "text": "夜晚的草地上，小兔子朵朵抬头看见了圆圆的月亮。“月亮住在哪里呢？”朵朵想。",
+    "voice": "xiaosi"
+  },
+  "prompt": null,
+  "model": {
+    "name": null,
+    "provider": "placeholder_tone",
+    "params": {
+      "voice": "xiaosi"
+    }
+  },
+  "outputs": [
+    {
+      "role": "narration_audio",
+      "path": "data/books/demo_book/audio/page_001.wav",
+      "bytes": 453642,
+      "sha256": "e3a363d00c8e6107108968cecb1aa63e561679467595128c2d623bc1b54fbaac",
+      "duration": 9.45
+    }
+  ],
+  "cost": {
+    "time": "2026-11-11T08:58:18.119+08:00",
+    "service": "tts",
+    "model": null,
+    "units": {
+      "chars": 37
+    },
+    "billable": false,
+    "amount": 0.0,
+    "currency": "CNY",
+    "priced": true,
+    "run_id": "tts-20261111T085818-73c0c5",
+    "book_id": "demo_book",
+    "page_no": 1,
+    "note": ""
+  },
+  "notes": {
+    "degraded": true
+  },
+  "error": null
+}
